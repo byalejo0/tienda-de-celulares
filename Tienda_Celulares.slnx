@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="cnl_Celulares/cnl_Celulares.csproj" Id="24a6ed24-d29f-4165-ba45-5b3921e0726f" />
+  <Project Path="lib_Celulares/lib_Celulares.csproj" Id="d87705a4-f872-4818-933a-45ceafce2085" />
+  <Project Path="tst_Celulares/tst_Celulares.csproj" Id="b51fd88b-b423-4282-8ca6-6ad8673abebf" />
+</Solution>

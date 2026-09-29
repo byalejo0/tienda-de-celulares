@@ -1,0 +1,12 @@
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\bin\Debug\net10.0\lib_Celulares.deps.json
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\bin\Debug\net10.0\lib_Celulares.dll
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\bin\Debug\net10.0\lib_Celulares.pdb
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.csproj.AssemblyReference.cache
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.AssemblyInfoInputs.cache
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.AssemblyInfo.cs
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.csproj.CoreCompileInputs.cache
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.dll
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\refint\lib_Celulares.dll
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.pdb
+C:\Users\PERSONAL\source\repos\Tienda_Celulares\lib_Celulares\obj\Debug\net10.0\ref\lib_Celulares.dll

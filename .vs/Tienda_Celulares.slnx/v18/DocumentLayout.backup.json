@@ -1,0 +1,219 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\script.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\script.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\transportadoras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\transportadoras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\trabajadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\trabajadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\tecnicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\tecnicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\reparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\reparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\garantias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\garantias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\envios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\envios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\detallesfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\detallesfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\entidades\\vendedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\entidades\\vendedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|c:\\users\\personal\\source\\repos\\tienda_celulares\\lib_celulares\\script.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{D87705A4-F872-4818-933A-45CEAFCE2085}|lib_Celulares\\lib_Celulares.csproj|solutionrelative:lib_celulares\\script.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DetallesFacturas.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\DetallesFacturas.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\DetallesFacturas.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\DetallesFacturas.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\DetallesFacturas.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwBIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T15:34:55.932Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Transportadoras.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Transportadoras.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Transportadoras.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Transportadoras.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Transportadoras.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T15:36:39.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IConexion.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Interfaces\\IConexion.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Interfaces\\IConexion.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Interfaces\\IConexion.cs",
+              "RelativeToolTip": "lib_Celulares\\Interfaces\\IConexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T17:58:49.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Implementaciones\\Conexion.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Implementaciones\\Conexion.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Implementaciones\\Conexion.cs",
+              "RelativeToolTip": "lib_Celulares\\Implementaciones\\Conexion.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T18:07:28.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Tecnicos.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Tecnicos.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Tecnicos.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Tecnicos.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Tecnicos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T16:50:23.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Script.sql ",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Script.sql",
+              "RelativeDocumentMoniker": "lib_Celulares\\Script.sql",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Script.sql",
+              "RelativeToolTip": "lib_Celulares\\Script.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-09-24T15:49:47.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Trabajadores.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Trabajadores.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Trabajadores.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Trabajadores.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Trabajadores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T16:51:06.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Reparaciones.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Reparaciones.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Reparaciones.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Reparaciones.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Reparaciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T16:49:37.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Garantias.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Garantias.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Garantias.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Garantias.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Garantias.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T16:48:11.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Facturas.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Facturas.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Facturas.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Facturas.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Facturas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T16:47:39.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Envios.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Envios.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Envios.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Envios.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Envios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T16:46:56.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Vendedores.cs",
+              "DocumentMoniker": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Vendedores.cs",
+              "RelativeDocumentMoniker": "lib_Celulares\\Entidades\\Vendedores.cs",
+              "ToolTip": "C:\\Users\\PERSONAL\\source\\repos\\Tienda_Celulares\\lib_Celulares\\Entidades\\Vendedores.cs",
+              "RelativeToolTip": "lib_Celulares\\Entidades\\Vendedores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T15:26:20.216Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
