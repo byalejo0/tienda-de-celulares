@@ -1,4 +1,4 @@
-CREATE DATABASE tienda_celulares_db;
+/*CREATE DATABASE tienda_celulares_db;
 GO
 USE tienda_celulares_db;
 GO
@@ -181,4 +181,4 @@ CREATE TABLE [Devolucion](
     [FechaDevolucion] DATETIME NOT NULL,
     [Motivo] NVARCHAR(200) NOT NULL,
     [ValorDevuelto] DECIMAL(15,2) NOT NULL
-);
+);*/

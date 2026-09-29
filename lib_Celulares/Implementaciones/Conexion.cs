@@ -9,6 +9,7 @@ namespace lib_Celulares.Implementaciones
 {
     public class Conexion : DbContext, IConexion
     {
+        
         public string? StringConexion { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

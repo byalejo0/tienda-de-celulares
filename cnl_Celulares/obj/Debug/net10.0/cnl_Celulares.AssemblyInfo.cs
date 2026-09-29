@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cnl_Celulares")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11f1212cb7ff45a1cf9cc07f6cfff2a9b26cc67c")]
 [assembly: System.Reflection.AssemblyProductAttribute("cnl_Celulares")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cnl_Celulares")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
