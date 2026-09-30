@@ -181,4 +181,65 @@ CREATE TABLE [Devolucion](
     [FechaDevolucion] DATETIME NOT NULL,
     [Motivo] NVARCHAR(200) NOT NULL,
     [ValorDevuelto] DECIMAL(15,2) NOT NULL
+
+INSERT INTO [Personas] ([Cedula], [Nombre], [Edad], [Direccion])
+VALUES (N'1023456789', N'Carlos Andrés Ramírez', 32, N'Calle 45 # 12-30, Bogotá');
+
+INSERT INTO [Clientes] ([TipoCliente], [PaisResidencia], [Correo])
+VALUES (N'Frecuente', N'Colombia', N'carlos.ramirez@correo.com');
+
+INSERT INTO [Trabajador] ([Experiencia], [Salario], [Turno])
+VALUES (N'3 años', 2500000.00, N'Mañana (8:00 a.m. - 4:00 p.m.)');
+
+INSERT INTO [Vendedor] ([CelularesVendidos], [MarcaEncargada])
+VALUES (120, N'Samsung');
+
+INSERT INTO [Tecnico] ([CelularesReparados], [Especializacion])
+VALUES (85, N'Reparación de pantallas y baterías');
+
+INSERT INTO [Marca] ([Nombre], [Telefono], [Correo], [Direccion])
+VALUES (N'Samsung', N'6017451234', N'contacto@samsung.com', N'Carrera 7 # 71-21, Bogotá');
+
+INSERT INTO [Componente] ([Procesador], [MemoriaRam], [Pantalla], [Bateria], [Camara], [SistemaOperativo])
+VALUES (N'Snapdragon 8 Gen 2', N'8 GB', N'AMOLED 6.1" 120Hz', N'4000 mAh', N'50 MP + 12 MP + 10 MP', N'Android 14');
+
+INSERT INTO [Celular] ([Disponible], [CantidadDisponible], [Color], [Precio], [Modelo], [Almacenamiento])
+VALUES (1, 15, N'Negro', 3200000.00, N'Galaxy S23', N'256 GB');
+
+INSERT INTO [Transportadora] ([Nombre], [Correo], [Telefono])
+VALUES (N'Servientrega', N'servicio@servientrega.com', N'6015551234');
+
+INSERT INTO [Proveedor] ([Nombre], [Correo], [Telefono], [Direccion])
+VALUES (N'Distribuidora Tech S.A.S', N'ventas@distritech.com', N'6014447788', N'Zona Industrial Puente Aranda, Bogotá');
+
+INSERT INTO [Compra] ([FechaCompra], [Total], [Estado])
+VALUES ('2026-09-10 10:30:00', 32000000.00, N'Recibida');
+
+INSERT INTO [DetalleCompra] ([Cantidad], [PrecioCompra])
+VALUES (10, 3200000.00);
+
+INSERT INTO [Bono] ([CantidadReparaciones], [ValorBono])
+VALUES (50, 150000.00);
+
+INSERT INTO [Reparacion] ([FechaIngreso], [FechaEntrega], [Estado])
+VALUES ('2026-09-15 09:00:00', '2026-09-18 16:00:00', N'Entregada');
+
+INSERT INTO [DetalleReparacion] ([Diagnostico], [ServicioRealizado], [ComponenteReemplazado], [Cantidad], [Precio], [Subtotal])
+VALUES (N'Pantalla rota por caída', N'Cambio de pantalla', N'Pantalla AMOLED', 1, 450000.00, 450000.00);
+
+INSERT INTO [Factura] ([Fecha], [Subtotal], [Iva], [Total])
+VALUES ('2026-09-20 14:15:00', 3200000.00, 608000.00, 3808000.00);
+
+INSERT INTO [DetalleFactura] ([Cantidad], [Subtotal], [Iva], [Total])
+VALUES (1, 3200000.00, 608000.00, 3808000.00);
+
+INSERT INTO [Garantia] ([FechaInicio], [FechaVencimiento], [TipoGarantia], [Estado])
+VALUES ('2026-09-20', '2027-09-20', N'Garantía de fábrica', N'Vigente');
+
+INSERT INTO [Envio] ([FechaEnvio], [FechaEntrega], [CostoEnvio])
+VALUES ('2026-09-21 08:00:00', '2026-09-23 12:00:00', 15000.00);
+
+INSERT INTO [Devolucion] ([FechaDevolucion], [Motivo], [ValorDevuelto])
+VALUES ('2026-09-28 11:00:00', N'Producto con defecto de fábrica', 3808000.00);
+GO
 );*/
