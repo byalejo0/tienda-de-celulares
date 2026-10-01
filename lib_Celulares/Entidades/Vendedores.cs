@@ -12,6 +12,6 @@ namespace lib_Celulares.Entidades
         public int CelularesVendidos { get; set; }
         public string? MarcaEncargada { get; set; }
 
-        [ForeignKey("TrabajadorId")] public Trabajadores? Trabajador { get; set; }
+        [ForeignKey("TrabajadorId")] public Trabajadores? _Trabajador { get; set; }
     }
 }

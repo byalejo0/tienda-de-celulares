@@ -15,7 +15,7 @@ namespace lib_Celulares.Entidades
         public decimal Iva { get; set; }
         public decimal Total { get; set; }
 
-        [ForeignKey("FacturaId")] public Facturas? Factura { get; set; }
-        [ForeignKey("CelularId")] public Celulares? Celular { get; set; }
+        [ForeignKey("FacturaId")] public Facturas? _Factura { get; set; }
+        [ForeignKey("CelularId")] public Celulares? _Celular { get; set; }
     }
 }

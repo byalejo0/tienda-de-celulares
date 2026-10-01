@@ -12,7 +12,7 @@ namespace lib_Celulares.Entidades
         public int CelularesReparados { get; set; }
         public string? Especializacion { get; set; }
 
-        [ForeignKey("TrabajadorId")] public Trabajadores? Trabajador { get; set; }
+        [ForeignKey("TrabajadorId")] public Trabajadores? _Trabajador { get; set; }
         public List<Bonos>? Bonos { get; set; }
         public List<Reparaciones>? Reparaciones { get; set; }
     }

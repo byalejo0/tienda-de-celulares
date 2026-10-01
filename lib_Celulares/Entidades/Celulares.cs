@@ -17,8 +17,8 @@ namespace lib_Celulares.Entidades
         public string? Modelo { get; set; }
         public string? Almacenamiento { get; set; }
 
-        [ForeignKey("MarcaId")] public Marcas? Marca { get; set; }
-        [ForeignKey("ComponenteId")] public Componentes? Componente { get; set; }
+        [ForeignKey("MarcaId")] public Marcas? _Marca { get; set; }
+        [ForeignKey("ComponenteId")] public Componentes? _Componente { get; set; }
         public List<Garantias>? Garantias { get; set; }
         public List<DetallesFacturas>? DetallesFacturas { get; set; }
         public List<Reparaciones>? Reparaciones { get; set; }

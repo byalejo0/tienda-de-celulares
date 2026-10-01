@@ -14,7 +14,7 @@ namespace tst_Celulares
         public ComprasPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,8 +30,8 @@ namespace tst_Celulares
         {
             this.entidad = new Compras()
             {
-                Proveedor = 1,
-                Trabajador = 1,
+                ProveedorId = 1,
+                TrabajadorId = 1,
                 FechaCompra = DateTime.Now,
                 Total = 32000000,
                 Estado = "Recibida"

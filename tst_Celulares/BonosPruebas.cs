@@ -14,7 +14,7 @@ namespace tst_Celulares
         public BonosPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace tst_Celulares
         {
             this.entidad = new Bonos()
             {
-                Tecnico = 1,
+                TecnicoId = 1,
                 CantidadReparaciones = 50,
                 ValorBono = 200000
             };

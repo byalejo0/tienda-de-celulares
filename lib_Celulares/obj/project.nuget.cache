@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ndlOMU7o5TU=",
+  "dgSpecHash": "oOy3hLwkHqc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PERSONAL\\OneDrive\\Desktop\\Universidad\\Programación de Software\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
+  "projectFilePath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PERSONAL\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\PERSONAL\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",

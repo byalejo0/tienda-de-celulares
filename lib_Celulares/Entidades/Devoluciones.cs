@@ -14,7 +14,7 @@ namespace lib_Celulares.Entidades
         public string? Motivo { get; set; }
         public decimal ValorDevuelto { get; set; }
 
-        [ForeignKey("FacturaId")] public Facturas? Factura { get; set; }
-        [ForeignKey("ClienteId")] public Clientes? Cliente { get; set; }
+        [ForeignKey("FacturaId")] public Facturas? _Factura { get; set; }
+        [ForeignKey("ClienteId")] public Clientes? _Cliente { get; set; }
     }
 }

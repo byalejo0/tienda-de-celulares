@@ -14,8 +14,8 @@ namespace lib_Celulares.Entidades
         public decimal Total { get; set; }
         public string? Estado { get; set; }
 
-        [ForeignKey("proveedorId")] public Proveedores? Proveedor { get; set; }
-        [ForeignKey("TrabajadorId")] public Trabajadores? Trabajador { get; set; }
+        [ForeignKey("ProveedorId")] public Proveedores? _Proveedor { get; set; }
+        [ForeignKey("TrabajadorId")] public Trabajadores? _Trabajador { get; set; }
         public List<DetallesCompras>? DetallesCompras { get; set; }
     }
 }

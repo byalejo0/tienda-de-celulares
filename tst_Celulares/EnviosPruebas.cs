@@ -14,7 +14,7 @@ namespace tst_Celulares
         public EnviosPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,9 +30,9 @@ namespace tst_Celulares
         {
             this.entidad = new Envios()
             {
-                Factura = 1,
-                Transportadora = 1,
-                Cliente = 1,
+                FacturaId = 1,
+                TransportadoraId = 1,
+                ClienteId = 1,
                 FechaEnvio = DateTime.Now,
                 FechaEntrega = DateTime.Now,
                 CostoEnvio = 15000

@@ -14,7 +14,7 @@ namespace tst_Celulares
         public ClientesPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace tst_Celulares
         {
             this.entidad = new Clientes()
             {
-                Persona = 1,
+                PersonaId = 1,
                 TipoCliente = "Minorista",
                 PaisResidencia = "Colombia",
                 Correo = "laura.gomez@correo.com"

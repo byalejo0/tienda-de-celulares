@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PERSONAL\\OneDrive\\Desktop\\Universidad\\Programación de Software\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {}
+    "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PERSONAL\\OneDrive\\Desktop\\Universidad\\Programación de Software\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {
+    "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PERSONAL\\OneDrive\\Desktop\\Universidad\\Programación de Software\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
+        "projectUniqueName": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
         "projectName": "lib_Celulares",
-        "projectPath": "C:\\Users\\PERSONAL\\OneDrive\\Desktop\\Universidad\\Programación de Software\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
+        "projectPath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
         "packagesPath": "C:\\Users\\PERSONAL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PERSONAL\\OneDrive\\Desktop\\Universidad\\Programación de Software\\tienda-de-celulares\\lib_Celulares\\obj\\",
+        "outputPath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

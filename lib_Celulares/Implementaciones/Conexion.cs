@@ -34,7 +34,7 @@ namespace lib_Celulares.Implementaciones
         public DbSet<Personas>? Personas { get; set; }
         public DbSet<Proveedores>? Proveedores { get; set; }
         public DbSet<Reparaciones>? Reparaciones { get; set; }
-        public DbSet<Tecnicos>? Teecnicos { get; set; }
+        public DbSet<Tecnicos>? Tecnicos { get; set; }
         public DbSet<Trabajadores>? Trabajadores { get; set; }
         public DbSet<Transportadoras>? Transportadoras { get; set; }
         public DbSet<Vendedores>? Vendedores { get; set; }

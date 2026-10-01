@@ -16,6 +16,6 @@ namespace lib_Celulares.Entidades
         public decimal Precio { get; set; }
         public decimal Subtotal { get; set; }
 
-        [ForeignKey("ReparacionId")] public Reparaciones? Reparacion { get; set; }
+        [ForeignKey("ReparacionId")] public Reparaciones? _Reparacion { get; set; }
     }
 }

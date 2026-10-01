@@ -14,7 +14,7 @@ namespace tst_Celulares
         public GarantiasPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,9 +30,9 @@ namespace tst_Celulares
         {
             this.entidad = new Garantias()
             {
-                Celular = 1,
-                Cliente = 1,
-                Factura = 1,
+                CelularId = 1,
+                ClienteId = 1,
+                FacturaId = 1,
                 FechaInicio = DateTime.Now,
                 FechaVencimiento = DateTime.Now,
                 TipoGarantia = "Garantía del fabricante",

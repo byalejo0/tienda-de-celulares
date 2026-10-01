@@ -14,7 +14,7 @@ namespace tst_Celulares
         public CelularesPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,8 +30,8 @@ namespace tst_Celulares
         {
             this.entidad = new Celulares()
             {
-                Marca = 1,
-                Componente = 1,
+                MarcaId = 1,
+                ComponenteId = 1,
                 Disponible = true,
                 CantidadDisponible = 15,
                 Color = "Negro",

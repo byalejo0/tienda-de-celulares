@@ -14,7 +14,7 @@ namespace tst_Celulares
         public FacturasPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,9 +30,9 @@ namespace tst_Celulares
         {
             this.entidad = new Facturas()
             {
-                Cliente = 1,
-                Trabajador = 1,
-                Reparacion = 1,
+                ClienteId = 1,
+                TrabajadorId = 1,
+                ReparacionId = 1,
                 Fecha = DateTime.Now,
                 Subtotal = 3200000,
                 Iva = 608000,

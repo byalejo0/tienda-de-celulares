@@ -14,7 +14,7 @@ namespace tst_Celulares
         public DevolucionesPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,8 +30,8 @@ namespace tst_Celulares
         {
             this.entidad = new Devoluciones()
             {
-                Factura = 1,
-                Cliente = 1,
+                FacturaId = 1,
+                ClienteId = 1,
                 FechaDevolucion = DateTime.Now,
                 Motivo = "Producto con defecto de fábrica",
                 ValorDevuelto = 3808000

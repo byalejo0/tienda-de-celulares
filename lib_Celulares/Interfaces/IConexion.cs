@@ -26,7 +26,7 @@ namespace lib_Celulares.Interfaces
         DbSet<Personas>? Personas { get; set; }
         DbSet<Proveedores>? Proveedores { get; set; }
         DbSet<Reparaciones>? Reparaciones { get; set; }
-        DbSet<Tecnicos>? Teecnicos { get; set; }
+        DbSet<Tecnicos>? Tecnicos { get; set; }
         DbSet<Trabajadores>? Trabajadores { get; set; }
         DbSet<Transportadoras>? Transportadoras { get; set; }
         DbSet<Vendedores>? Vendedores { get; set; }

@@ -13,7 +13,7 @@ namespace lib_Celulares.Entidades
         public decimal Salario { get; set; }
         public string? Turno { get; set; }
 
-        [ForeignKey("PersonaId")] public Personas? Persona { get; set; }
+        [ForeignKey("PersonaId")] public Personas? _Persona { get; set; }
         public List<Vendedores>? Vendedores { get; set; }
         public List<Tecnicos>? Tecnicos { get; set; }
         public List<Facturas>? Facturas { get; set; }

@@ -14,7 +14,7 @@ namespace tst_Celulares
         public TrabajadoresPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace tst_Celulares
         {
             this.entidad = new Trabajadores()
             {
-                Persona = 1,
+                PersonaId = 1,
                 Experiencia = "5 años",
                 Salario = 2_500_000m,
                 Turno = "Mañana (8:00 a.m. - 4:00 p.m.)"

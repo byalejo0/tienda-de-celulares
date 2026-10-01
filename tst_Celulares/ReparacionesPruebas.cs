@@ -14,7 +14,7 @@ namespace tst_Celulares
         public ReparacionesPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,10 +30,10 @@ namespace tst_Celulares
         {
             this.entidad = new Reparaciones()
             {
-                Celular = 1,
-                Tecnico = 1,
-                Cliente = 1,
-                Bono = 1,
+                CelularId = 1,
+                TecnicoId = 1,
+                ClienteId = 1,
+                BonoId = 1,
                 FechaIngreso = DateTime.Now,
                 FechaEntrega = DateTime.Now,
                 Estado = "Entregada"

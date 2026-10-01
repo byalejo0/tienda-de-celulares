@@ -16,10 +16,10 @@ namespace lib_Celulares.Entidades
         public DateTime FechaEntrega { get; set; }
         public string? Estado { get; set; }
 
-        [ForeignKey("CelularId")] public Celulares? Celular { get; set; }
-        [ForeignKey("TecnicoId")] public Tecnicos? Tecnico { get; set; }
-        [ForeignKey("ClienteId")] public Clientes? Cliente { get; set; }
-        [ForeignKey("BonoId")] public Bonos? Bono { get; set; }
+        [ForeignKey("CelularId")] public Celulares? _Celular { get; set; }
+        [ForeignKey("TecnicoId")] public Tecnicos? _Tecnico { get; set; }
+        [ForeignKey("ClienteId")] public Clientes? _Cliente { get; set; }
+        [ForeignKey("BonoId")] public Bonos? _Bono { get; set; }
         public List<DetallesReparaciones>? DetallesReparaciones { get; set; }
         public List<Facturas>? Facturas { get; set; }
     }

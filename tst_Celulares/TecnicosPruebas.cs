@@ -14,7 +14,7 @@ namespace tst_Celulares
         public TecnicosPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -30,10 +30,9 @@ namespace tst_Celulares
         {
             this.entidad = new Tecnicos()
             {
-                Persona = 1,
-                Experiencia = "7 años",
-                Salario = 3000000,
-                Turno = "Tarde (2:00 p.m. - 10:00 p.m.)"
+                TrabajadorId = 1,
+                CelularesReparados = 43,
+                Especializacion = "Reparación general de Celulares",
             };
             this.conexion.Tecnicos!.Add(this.entidad!);
             this.conexion.SaveChanges();
@@ -48,7 +47,7 @@ namespace tst_Celulares
 
         private void Actualizar()
         {
-            this.entidad!.Experiencia = "5 años de Trabajo Independiente";
+            this.entidad!.CelularesReparados = 37;
 
             var entry = this.conexion!.Entry<Tecnicos>(this.entidad);
             entry.State = EntityState.Modified;

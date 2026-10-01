@@ -14,7 +14,7 @@ namespace tst_Celulares
         public ProveedoresPruebas()
         {
             this.conexion = new Conexion();
-            this.conexion.StringConexion = "server=localhost;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
+            this.conexion.StringConexion = "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace tst_Celulares
 
         private void Actualizar()
         {
-            this.entidad!.Telefono = 3036345343;
+            this.entidad!.Telefono = "3036345343";
 
             var entry = this.conexion!.Entry<Proveedores>(this.entidad);
             entry.State = EntityState.Modified;
