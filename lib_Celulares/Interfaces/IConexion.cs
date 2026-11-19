@@ -1,15 +1,13 @@
 ﻿using lib_Celulares.Entidades;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace lib_Celulares.Interfaces
 {
     public interface IConexion
     {
-        string? StringConexion { get; set; }
 
+        DbSet<Auditorias>? Auditorias { get; set; }
         DbSet<Bonos>? Bonos { get; set; }
         DbSet<Celulares>? Celulares { get; set; }
         DbSet<Clientes>? Clientes { get; set; }
@@ -23,13 +21,19 @@ namespace lib_Celulares.Interfaces
         DbSet<Facturas>? Facturas { get; set; }
         DbSet<Garantias>? Garantias { get; set; }
         DbSet<Marcas>? Marcas { get; set; }
+        DbSet<Permisos>? Permisos { get; set; }
         DbSet<Personas>? Personas { get; set; }
         DbSet<Proveedores>? Proveedores { get; set; }
         DbSet<Reparaciones>? Reparaciones { get; set; }
+        DbSet<Roles>? Roles { get; set; }
         DbSet<Tecnicos>? Tecnicos { get; set; }
         DbSet<Trabajadores>? Trabajadores { get; set; }
         DbSet<Transportadoras>? Transportadoras { get; set; }
+        DbSet<Usuarios>? Usuarios { get; set; }
         DbSet<Vendedores>? Vendedores { get; set; }
+
+        EntityEntry<T> Entry<T>(T entity) where T : class;
+        int SaveChanges();
     }
 }
 
