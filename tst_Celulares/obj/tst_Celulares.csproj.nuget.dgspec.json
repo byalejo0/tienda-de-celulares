@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj": {}
+    "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {
+    "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
+        "projectUniqueName": "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
         "projectName": "lib_Celulares",
-        "projectPath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
-        "packagesPath": "C:\\Users\\PERSONAL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\obj\\",
+        "projectPath": "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj",
+        "packagesPath": "C:\\Users\\alejo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\lib_Celulares\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PERSONAL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alejo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -352,20 +351,20 @@
         }
       }
     },
-    "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj": {
+    "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj",
+        "projectUniqueName": "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj",
         "projectName": "tst_Celulares",
-        "projectPath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj",
-        "packagesPath": "C:\\Users\\PERSONAL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\tst_Celulares\\obj\\",
+        "projectPath": "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\tst_Celulares\\tst_Celulares.csproj",
+        "packagesPath": "C:\\Users\\alejo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\tst_Celulares\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PERSONAL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alejo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -374,7 +373,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -382,8 +380,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {
-                "projectPath": "C:\\Users\\PERSONAL\\Downloads\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj"
+              "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj": {
+                "projectPath": "C:\\Users\\alejo\\OneDrive\\Imágenes\\Documentos\\celulaler\\tienda-de-celulares\\lib_Celulares\\lib_Celulares.csproj"
               }
             }
           }
@@ -426,7 +424,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
