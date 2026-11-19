@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\lib_Celulares\lib_Celulares.csproj" />
+    <ProjectReference Include="..\Pre_Celulares\Pre_Celulares.csproj" />
+  </ItemGroup>
+
 </Project>

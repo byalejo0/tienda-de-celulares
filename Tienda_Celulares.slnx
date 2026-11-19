@@ -1,6 +1,7 @@
 <Solution>
-  <Project Path="asp_Celulares/asp_Celulares.csproj" Id="5b76c6f0-18fa-48c7-887a-9092dfff71d6" />
+  <Project Path="Front_Celulares/Front_Celulares.csproj" Id="a2f72b5b-7e20-40f9-8104-a083eb5edf0a" />
   <Project Path="lib_Celulares/lib_Celulares.csproj" Id="d87705a4-f872-4818-933a-45ceafce2085" />
   <Project Path="Pre_Celulares/Pre_Celulares.csproj" Id="faeace7d-9934-411c-922d-2c4ad3ff8b1d" />
+  <Project Path="Srv_Celulares/Srv_Celulares.csproj" Id="7889a26e-4fe9-476c-86b4-ad4a7a299e45" />
   <Project Path="tst_Celulares/tst_Celulares.csproj" Id="b51fd88b-b423-4282-8ca6-6ad8673abebf" />
 </Solution>

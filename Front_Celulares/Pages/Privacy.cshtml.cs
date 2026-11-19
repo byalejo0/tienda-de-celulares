@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Front_Celulares.Pages
+namespace front_horarios.Pages
 {
     public class PrivacyModel : PageModel
     {
