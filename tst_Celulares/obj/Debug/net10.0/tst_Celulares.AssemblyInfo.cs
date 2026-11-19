@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tst_Celulares")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa3925947ad49d1fab065d72c14e95a628f467d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28b363f0a6346292565317271a1285508b28b947")]
 [assembly: System.Reflection.AssemblyProductAttribute("tst_Celulares")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tst_Celulares")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
