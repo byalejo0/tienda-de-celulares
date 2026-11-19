@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace asp_Celulares.Controllers
+namespace Srv_Celulares.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -11,7 +11,7 @@ namespace asp_Celulares.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         ];
 
-        [HttpGet]
+        [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

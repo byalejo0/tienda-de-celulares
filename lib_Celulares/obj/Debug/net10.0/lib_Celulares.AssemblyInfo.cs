@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lib_Celulares")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81f0471f3ab713118f369514e765b254b2dba0ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8db3f82af84615c76367ff6b5a239b8307dca4b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("lib_Celulares")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lib_Celulares")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,0 @@
-@asp_Celulares_HostAddress = http://localhost:5086
-
-GET {{asp_Celulares_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

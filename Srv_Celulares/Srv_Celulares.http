@@ -1,0 +1,6 @@
+@Srv_Celulares_HostAddress = http://localhost:5274
+
+GET {{Srv_Celulares_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
