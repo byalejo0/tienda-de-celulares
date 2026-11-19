@@ -12,8 +12,8 @@ namespace lib_Celulares.Entidades
         public int TecnicoId { get; set; }
         public int ClienteId { get; set; }
         public int? BonoId { get; set; }
-        public DateTime FechaIngreso { get; set; }
-        public DateTime FechaEntrega { get; set; }
+        public DateTime? FechaIngreso { get; set; }
+        public DateTime? FechaEntrega { get; set; }
         public string? Estado { get; set; }
 
         [ForeignKey("CelularId")] public Celulares? _Celular { get; set; }

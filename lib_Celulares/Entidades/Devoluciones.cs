@@ -10,7 +10,7 @@ namespace lib_Celulares.Entidades
         public int Id { get; set; }
         public int FacturaId { get; set; }
         public int ClienteId { get; set; }
-        public DateTime FechaDevolucion { get; set; }
+        public DateTime? FechaDevolucion { get; set; }
         public string? Motivo { get; set; }
         public decimal ValorDevuelto { get; set; }
 

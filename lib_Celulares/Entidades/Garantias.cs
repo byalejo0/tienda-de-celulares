@@ -11,8 +11,8 @@ namespace lib_Celulares.Entidades
         public int CelularId { get; set; }
         public int ClienteId { get; set; }
         public int FacturaId { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaVencimiento { get; set; }
+        public DateTime? FechaInicio { get; set; }
+        public DateTime? FechaVencimiento { get; set; }
         public string? TipoGarantia { get; set; }
         public string? Estado { get; set; }
 

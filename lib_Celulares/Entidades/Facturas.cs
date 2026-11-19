@@ -11,7 +11,7 @@ namespace lib_Celulares.Entidades
         public int ClienteId { get; set; }
         public int TrabajadorId { get; set; }
         public int? ReparacionId { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Iva { get; set; }
         public decimal Total { get; set; }

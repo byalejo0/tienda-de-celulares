@@ -11,8 +11,8 @@ namespace lib_Celulares.Entidades
         public int FacturaId { get; set; }
         public int TransportadoraId { get; set; }
         public int ClienteId { get; set; }
-        public DateTime FechaEnvio { get; set; }
-        public DateTime FechaEntrega { get; set; }
+        public DateTime? FechaEnvio { get; set; }
+        public DateTime? FechaEntrega { get; set; }
         public decimal CostoEnvio { get; set; }
 
         [ForeignKey("FacturaId")] public Facturas? _Factura { get; set; }

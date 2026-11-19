@@ -10,7 +10,7 @@ namespace lib_Celulares.Entidades
         public int Id { get; set; }
         public int ProveedorId { get; set; }
         public int TrabajadorId { get; set; }
-        public DateTime FechaCompra { get; set; }
+        public DateTime? FechaCompra { get; set; }
         public decimal Total { get; set; }
         public string? Estado { get; set; }
 

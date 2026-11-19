@@ -65,3 +65,17 @@ C:\Users\PERSONAL\Downloads\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\
 C:\Users\PERSONAL\Downloads\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.pdb
 C:\Users\PERSONAL\Downloads\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\ref\lib_Celulares.dll
 C:\Users\PERSONAL\Downloads\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celu.11328337.Up2Date
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\bin\Debug\net10.0\lib_Celulares.deps.json
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\bin\Debug\net10.0\lib_Celulares.dll
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\bin\Debug\net10.0\lib_Celulares.pdb
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.csproj.AssemblyReference.cache
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.AssemblyInfoInputs.cache
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.AssemblyInfo.cs
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.csproj.CoreCompileInputs.cache
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.sourcelink.json
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.dll
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\refint\lib_Celulares.dll
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celulares.pdb
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\ref\lib_Celulares.dll
+C:\Users\PERSONAL\OneDrive\Desktop\Universidad\Programación de Software\Proyecto Final\tienda-de-celulares\lib_Celulares\obj\Debug\net10.0\lib_Celu.11328337.Up2Date
