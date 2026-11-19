@@ -1,23 +1,19 @@
 ﻿using lib_Celulares.Entidades;
 using lib_Celulares.Interfaces;
+using lib_Celulares.Nucleo;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace lib_Celulares.Implementaciones
 {
     public class Conexion : DbContext, IConexion
     {
-        
-        public string? StringConexion { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(this.StringConexion!, p => { });
+            optionsBuilder.UseSqlServer(DatosGenerales.StringConexion()!, p => { });
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 
+        public DbSet<Auditorias>? Auditorias { get; set; }
         public DbSet<Bonos>? Bonos { get; set; }
         public DbSet<Celulares>? Celulares { get; set; }
         public DbSet<Clientes>? Clientes { get; set; }
@@ -31,12 +27,15 @@ namespace lib_Celulares.Implementaciones
         public DbSet<Facturas>? Facturas { get; set; }
         public DbSet<Garantias>? Garantias { get; set; }
         public DbSet<Marcas>? Marcas { get; set; }
+        public DbSet<Permisos>? Permisos { get; set; }
         public DbSet<Personas>? Personas { get; set; }
         public DbSet<Proveedores>? Proveedores { get; set; }
         public DbSet<Reparaciones>? Reparaciones { get; set; }
+        public DbSet<Roles>? Roles { get; set; }
         public DbSet<Tecnicos>? Tecnicos { get; set; }
         public DbSet<Trabajadores>? Trabajadores { get; set; }
         public DbSet<Transportadoras>? Transportadoras { get; set; }
+        public DbSet<Usuarios>? Usuarios { get; set; }
         public DbSet<Vendedores>? Vendedores { get; set; }
     }
 }
