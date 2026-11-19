@@ -4,10 +4,10 @@ namespace lib_Celulares.Interfaces
 {
     public interface ICelularesAplicacion
     {
-        Auditorias Insertar(Auditorias entidad);
-        Auditorias Actualizar(Auditorias entidad);
-        List<Auditorias> Consultar();
-        List<Auditorias> Buscar(Auditorias entidad);
-        Auditorias Borrar(Auditorias entidad);
+        Celulares Insertar(Celulares entidad);
+        Celulares Actualizar(Celulares entidad);
+        List<Celulares> Consultar();
+        List<Celulares> Buscar(Celulares entidad);
+        Celulares Borrar(Celulares entidad);
     }
 }

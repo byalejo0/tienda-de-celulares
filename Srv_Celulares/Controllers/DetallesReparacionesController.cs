@@ -1,5 +1,5 @@
-using lib_Celulares.entidades;
-using lib_Celulares.interfaces;
+using lib_Celulares.Entidades;
+using lib_Celulares.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cnl_Celulares.Controllers

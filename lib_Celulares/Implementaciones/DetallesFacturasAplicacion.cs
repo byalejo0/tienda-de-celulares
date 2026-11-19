@@ -1,7 +1,8 @@
 ﻿using lib_Celulares.Entidades;
+using lib_Celulares.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace lib_Celulares.Interfaces
+namespace lib_Celulares.Implementaciones
 {
     public class DetallesFacturasAplicacion : IDetallesFacturasAplicacion
     {

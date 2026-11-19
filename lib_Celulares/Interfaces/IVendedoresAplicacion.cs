@@ -1,13 +1,13 @@
-﻿using aplicaciones_horarios.entidades;
+﻿using lib_Celulares.Entidades;
 
-namespace aplicaciones_horarios.interfaces
+namespace lib_Celulares.Interfaces
 {
-    public interface IAsignacionesAplicacion
+    public interface IVendedoresAplicacion
     {
-        Asignaciones Insertar(Asignaciones entidad);
-        Asignaciones Actualizar(Asignaciones entidad);
-        List<Asignaciones> Consultar();
-        List<Asignaciones> Buscar(Asignaciones entidad);
-        Asignaciones Borrar(Asignaciones entidad);
+        Vendedores Insertar(Vendedores entidad);
+        Vendedores Actualizar(Vendedores entidad);
+        List<Vendedores> Consultar();
+        List<Vendedores> Buscar(Vendedores entidad);
+        Vendedores Borrar(Vendedores entidad);
     }
 }

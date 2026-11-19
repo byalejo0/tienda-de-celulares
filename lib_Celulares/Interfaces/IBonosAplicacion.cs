@@ -4,10 +4,10 @@ namespace lib_Celulares.Interfaces
 {
     public interface IBonosAplicacion
     {
-        Auditorias Insertar(Auditorias entidad);
-        Auditorias Actualizar(Auditorias entidad);
-        List<Auditorias> Consultar();
-        List<Auditorias> Buscar(Auditorias entidad);
-        Auditorias Borrar(Auditorias entidad);
+        Bonos Insertar(Bonos entidad);
+        Bonos Actualizar(Bonos entidad);
+        List<Bonos> Consultar();
+        List<Bonos> Buscar(Bonos entidad);
+        Bonos Borrar(Bonos entidad);
     }
 }
