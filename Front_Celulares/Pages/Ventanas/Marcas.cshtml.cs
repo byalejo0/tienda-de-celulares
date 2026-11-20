@@ -6,24 +6,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace front_horarios.Pages.Ventanas
 {
-    public class AsignacionesModel : PageModel
+    public class MarcasModel : PageModel
     {
-        private ILugaresPresentacion ILugaresPresentacion;
-        private IAsignacionesPresentacion IAsignacionesPresentacion;
+        private IMarcasPresentacion IMarcasPresentacion;
 
-        public AsignacionesModel(ILugaresPresentacion ILugaresPresentacion,
-            IAsignacionesPresentacion IAsignacionesPresentacion)
+        public MarcasModel(IMarcasPresentacion IMarcasPresentacion)
         {
-            this.ILugaresPresentacion = ILugaresPresentacion;
-            this.IAsignacionesPresentacion = IAsignacionesPresentacion;
-            this.Filtro = new Asignaciones();
+            this.IMarcasPresentacion = IMarcasPresentacion;
+            this.Filtro = new Marcas();
         }
 
         public IFormFile? FormFile { get; set; }
-        [BindProperty] public List<Lugares> Lugares { get; set; }
-        [BindProperty] public List<Asignaciones> Lista { get; set; }
-        [BindProperty] public Asignaciones? Filtro { get; set; }
-        [BindProperty] public Asignaciones? Actual { get; set; }
+        [BindProperty] public List<Marcas> Lista { get; set; }
+        [BindProperty] public Marcas? Filtro { get; set; }
+        [BindProperty] public Marcas? Actual { get; set; }
         [BindProperty] public bool Formulario { get; set; } = false;
         [BindProperty] public bool Borrar { get; set; } = false;
         
@@ -41,7 +37,7 @@ namespace front_horarios.Pages.Ventanas
                 }
 
                 Filtro!.Nombre = Filtro!.Nombre ?? "";
-                Lista = this.IAsignacionesPresentacion.Buscar(Filtro!);
+                Lista = this.IMarcasPresentacion.Buscar(Filtro!);
             }
             catch (Exception ex)
             {
@@ -54,8 +50,7 @@ namespace front_horarios.Pages.Ventanas
             try
             {
                 Formulario = true;
-                this.Actual = new Asignaciones();
-                this.Lugares = this.ILugaresPresentacion.Consultar();
+                this.Actual = new Marcas();
             }
             catch (Exception ex)
             {
@@ -76,9 +71,9 @@ namespace front_horarios.Pages.Ventanas
                 }
 
                 if (this.Actual!.Id == 0)
-                    this.Actual = this.IAsignacionesPresentacion.Insertar(this.Actual!);
+                    this.Actual = this.IMarcasPresentacion.Insertar(this.Actual!);
                 else
-                    this.Actual = this.IAsignacionesPresentacion.Actualizar(this.Actual!);
+                    this.Actual = this.IMarcasPresentacion.Actualizar(this.Actual!);
             }
             catch (Exception ex)
             {
@@ -97,7 +92,6 @@ namespace front_horarios.Pages.Ventanas
                 Formulario = true;
                 OnPostBtConsultar();
                 this.Actual = this.Lista.FirstOrDefault(x => x.Id == Convert.ToInt32(data));
-                this.Lugares = this.ILugaresPresentacion.Consultar();
             }
             catch (Exception ex)
             {
@@ -125,7 +119,7 @@ namespace front_horarios.Pages.Ventanas
             {
                 if (this.Actual!.Id == 0)
                     return;
-                this.Actual = this.IAsignacionesPresentacion.Borrar(this.Actual!);
+                this.Actual = this.IMarcasPresentacion.Borrar(this.Actual!);
             }
             catch (Exception ex)
             {

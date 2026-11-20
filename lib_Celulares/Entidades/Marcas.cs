@@ -11,7 +11,7 @@ namespace lib_Celulares.Entidades
         public string? Telefono { get; set; }
         public string? Correo { get; set; }
         public string? Direccion { get; set; }
-
+        public string? Logo { get; set; }
         public List<Celulares>? Celulares { get; set; }
     }
 }

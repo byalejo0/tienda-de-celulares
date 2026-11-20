@@ -1,13 +1,13 @@
 ﻿@page
-@model AsignacionesModel
+@model MarcasModel
 @{
-    ViewData["Title"] = "Asignaciones";
+    ViewData["Title"] = "Marcas";
 }
 <form method="post"
     enctype="multipart/form-data">
 
     <div class="text-center">
-        <h1 class="display-4">Asignaciones</h1>
+        <h1 class="display-4">Marcas</h1>
         <div>
             <input type="submit"
                 value="Consultar"
@@ -43,11 +43,19 @@
                 <h3>Asignación</h3>
 
                 <label>
-                    Codigo
+                    Logo
                 </label>
-                <input id=nmCodigo"
-                    asp-for="@Model.Actual!.Codigo"/>
-                <br />
+                @if (Model.Actual!.Logo != null)
+                {
+                    <img height="100"
+                         width="100"
+                         src="data:image;base64,
+                    @System.Convert.ToBase64String(
+                     Convert.FromBase64String(
+                      Model.Actual!.Logo))" />
+                }
+                <input type="file"
+                       asp-for="FormFile" />
 
                 <label>
                     Nombre
@@ -57,49 +65,26 @@
                 <br />
 
                 <label>
-                    Lugar
+                    Telefono
                 </label>
-                <select id="nmLugar"
-                    asp-for="@Model.Actual!.Lugar"
-                    asp-items="@(new SelectList(Model.Lugares, "Id", "Nombre"))">
+                <select id="nmTelefono"
+                    asp-for="@Model.Actual!.Telefono"
                 </select>
                 <br />
 
                 <label>
-                    Inicio
+                    Correo
                 </label>
-                <input id=nmInicio"
-                    asp-for="@Model.Actual!.Inicio"/>
+                <input id=nmCorreo"
+                    asp-for="@Model.Actual!.Correo"/>
                 <br />
 
                 <label>
-                    Final
+                    Dirección
                 </label>
-                <input id=nmFinal"
-                    asp-for="@Model.Actual!.Final"/>
+                <input id=nmDireccion"
+                    asp-for="@Model.Actual!.Direccion"/>
                 <br />
-
-                <label>
-                    Notas
-                </label>
-                <input id=nmNotas"
-                    asp-for="@Model.Actual!.Notas" />
-                <br />
-
-                <label>
-                    Imagen
-                </label>
-                @if (Model.Actual!.Imagen != null)
-                {
-                    <img height="100"
-                        width="100"
-                        src="data:image;base64,
-                            @System.Convert.ToBase64String(
-                            Convert.FromBase64String(
-                            Model.Actual!.Imagen))" />
-                }
-                <input type="file"
-                    asp-for="FormFile" />
             </div>
         }
 
@@ -113,9 +98,11 @@
 
                     <h4>
                         ¿Quiere borrar la asignacion con información 
-                            @Model.Actual!.Codigo,
+                            @Model.Actual!.Logo,
                             @Model.Actual!.Nombre,
-                            @Model.Actual!.Lugar?
+                            @Model.Actual!.Telefono,
+                            @Model.Actual!.Correo,
+                            @Model.Actual!.Direccion,
                     </h4>
                     <input type="submit"
                         value="Cancelar"
@@ -136,36 +123,31 @@
             <div class="containers_vn panel panel-default">
                 <table class="tb_data table table-striped table-bordered table-hover">
                     <tr>
-                        <th>Código</th>
+                        <th>Logo</th>
                         <th>Nombre</th>
-                        <th>Lugar</th>
-                        <th>Inicio</th>
-                        <th>Final</th>
-                        <th>Notas</th>
-                        <th>Imagen</th>
-                        <th>Acción</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Dirección</th>
                     </tr>
                     @if (Model != null && Model.Lista != null)
                     {
                         foreach (var elemento in Model.Lista)
                         {
                             <tr>
-                                <td>@elemento.Codigo</td>
+                            <td>
+                                @if (elemento.Logo != null)
+                                {
+                                    <img height="60"
+                                         width="60"
+                                         src="data:image;base64,
+                                    @System.Convert.ToBase64String(
+     Convert.FromBase64String(elemento.Logo))" />
+                                }
+                            </td>
                                 <td>@elemento.Nombre</td>
-                                <td>@elemento._Lugar!.Nombre</td>
-                                <td>@elemento.Inicio</td>
-                                <td>@elemento.Final</td>
-                                <td>@elemento.Notas</td>
-                                <td>
-                                    @if (elemento.Imagen != null)
-                                    {
-                                        <img height="60"
-                                             width="60"
-                                             src="data:image;base64,
-                                                @System.Convert.ToBase64String(
-                                                Convert.FromBase64String(elemento.Imagen))" />
-                                    }
-                                </td>
+                                <td>@elemento.Telefono</td>
+                                <td>@elemento.Correo</td>
+                                <td>@elemento.Direccion</td>
                                 <td>
                                     <input type="submit"
                                         value="Editar"

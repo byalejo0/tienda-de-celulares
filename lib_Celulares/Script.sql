@@ -48,7 +48,8 @@ CREATE TABLE [Marcas](
     [Nombre] NVARCHAR(100) NOT NULL,
     [Telefono] NVARCHAR(20) NOT NULL,
     [Correo] NVARCHAR(100) NOT NULL,
-    [Direccion] NVARCHAR(200) NOT NULL
+    [Direccion] NVARCHAR(200) NOT NULL,
+    [Logo] NVARCHAR(MAX) NULL
 );
 
 CREATE TABLE [Componentes](
