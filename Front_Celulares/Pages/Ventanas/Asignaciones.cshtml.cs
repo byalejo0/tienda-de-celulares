@@ -1,6 +1,6 @@
-using aplicaciones_horarios.entidades;
-using aplicaciones_horarios.interfaces;
-using lib_Celulares.Nucleo
+using lib_Celulares.Entidades;
+using Pre_Celulares.Interfaces;
+using lib_Celulares.Nucleo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

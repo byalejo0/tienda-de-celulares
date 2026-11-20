@@ -26,6 +26,7 @@ CREATE TABLE [Trabajadores](
     [Experiencia] NVARCHAR(100) NOT NULL,
     [Salario] DECIMAL(15,2) NOT NULL,
     [Turno] NVARCHAR(200) NOT NULL
+
 );
 
 CREATE TABLE [Vendedores](
@@ -182,6 +183,29 @@ CREATE TABLE [Devoluciones](
     [FechaDevolucion] DATETIME NOT NULL,
     [Motivo] NVARCHAR(200) NOT NULL,
     [ValorDevuelto] DECIMAL(15,2) NOT NULL
+);
+
+CREATE TABLE [Usuarios](
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+    [Nombre_Usuario] NVARCHAR(30) NOT NULL,
+    [Nombre_Usuario] NVARCHAR(100) NOT NULL,
+);
+
+CREATE TABLE [Roles](
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+    [UsuarioId] INT NOT NULL REFERENCES [Usuarios] ([Id]),
+);
+
+CREATE TABLE [Auditorias](
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+    [UsuarioId] INT NOT NULL REFERENCES [Usuarios] ([Id]),
+    [Descripción] NVARCHAR(200) NOT NULL,
+    [Fecha] DATETIME NOT NULL
+);
+
+CREATE TABLE [Permisos](
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+    [RolId] INT NOT NULL REFERENCES [Roles] ([Id]),
 );
 
 INSERT INTO [Personas] 
