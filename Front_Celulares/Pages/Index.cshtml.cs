@@ -2,7 +2,7 @@ using aplicaciones_horarios.nucleo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace front_horarios.Pages
+namespace Front_Celulares.Pages
 {
     public class IndexModel : PageModel
     {

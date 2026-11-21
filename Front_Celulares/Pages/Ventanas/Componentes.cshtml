@@ -1,0 +1,165 @@
+﻿@page
+@model ComponentesModel
+@{
+    ViewData["Title"] = "Componentes";
+}
+<form method="post"
+    enctype="multipart/form-data">
+
+    <div class="text-center">
+        <h1 class="display-4">Componentes</h1>
+        <div>
+            <input type="submit"
+                value="Consultar"
+                class="btn btn-secondary"
+                asp-page-handler="BtConsultar"/>
+            <input type="submit"
+                value="Nuevo"
+                class="btn btn-secondary"
+                asp-page-handler="BtNuevo"/>
+            <input type="submit"
+                value="Guardar"
+                class="btn btn-secondary"
+                asp-page-handler="BtGuardar"/>
+            <input id="flId" 
+                placeholder="Id"
+                asp-for="@Model.Filtro!.Id"/>
+        </div>
+
+        @if (ViewData.ContainsKey("Mensaje"))
+        {
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+        }
+        
+        @if (Model.Formulario || Model.Borrar)
+        {
+            <input type="hidden"
+                asp-for="@Model.Actual!.Id" />
+        }
+
+        @if (Model.Formulario)
+        {
+            <div>
+                <h3>Componentes</h3>
+
+                <input type="file"
+                       asp-for="FormFile" />
+
+                <label>
+                    Procesador
+                </label>
+                <input id=nmProcesador"
+                    asp-for="@Model.Actual!.Procesador"/>
+                <br />
+
+                <label>
+                    MemoriaRam
+                </label>
+                <input id="nmMemoriaRam"
+                    asp-for="@Model.Actual!.MemoriaRam"/>
+                <br />
+
+                <label>
+                    Pantalla
+                </label>
+                <input id=nmPantalla"
+                    asp-for="@Model.Actual!.Pantalla"/>
+                <br />
+
+                <label>
+                    Bateria
+                </label>
+                <input id=nmBateria"
+                    asp-for="@Model.Actual!.Bateria"/>
+                <br />
+
+                <label>
+                    Camara
+                </label>
+                <input id=nmCamara"
+                       asp-for="@Model.Actual!.Camara" />
+                <br />
+
+                <label>
+                    Sistema Operativo
+                </label>
+                <input id=nmSistemaOperativo"
+                       asp-for="@Model.Actual!.SistemaOperativo" />
+                <br />
+            </div>
+        }
+
+        @if (Model.Borrar)
+        {
+            <div class="popup">
+                <div class="pp_del_inner">
+                    <h3>
+                        Mensaje
+                    </h3>
+
+                    <h4>
+                        ¿Quiere borrar la asignacion con información 
+                            @Model.Actual!.Procesador,
+                            @Model.Actual!.MemoriaRam,
+                            @Model.Actual!.Pantalla,
+                            @Model.Actual!.Bateria,
+                            @Model.Actual!.Camara,
+                            @Model.Actual!.SistemaOperativo?
+                    </h4>
+                    <input type="submit"
+                        value="Cancelar"
+                        class="btn btn-secondary"
+                        asp-page-handler="BtConsultar"/>
+                    <input type="submit"
+                        value="Borrar"
+                        class="btn btn-secondary"
+                        asp-page-handler="BtBorrar"/>
+                </div>
+            </div>
+        }
+
+        @if (!Model.Formulario)
+        {
+            <br />
+            <br />
+            <div class="containers_vn panel panel-default">
+                <table class="tb_data table table-striped table-bordered table-hover">
+                    <tr>
+                        <th>Logo</th>
+                        <th>Procesador</th>
+                        <th>MemoriaRAM</th>
+                        <th>Pantalla</th>
+                        <th>Bateria</th>
+                        <th>Camara</th>
+                        <th>Sistema Operativo</th>
+                    </tr>
+                    @if (Model != null && Model.Lista != null)
+                    {
+                        foreach (var elemento in Model.Lista)
+                        {
+                            <tr>
+                                <td>@elemento.Procesador</td>
+                                <td>@elemento.MemoriaRam</td>
+                                <td>@elemento.Pantalla</td>
+                                <td>@elemento.Bateria</td>
+                                <td>
+                                    <input type="submit"
+                                        value="Editar"
+                                        class="btn btn-secondary"
+                                        asp-page-handler="BtEditar"
+                                        asp-route-data="@elemento.Id"/>
+                                    <input type="submit"
+                                        value="Borrar"
+                                        class="btn btn-secondary"
+                                        asp-page-handler="BtPregBorrar"
+                                        asp-route-data="@elemento.Id"/>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        }
+
+        </div>
+</form>

@@ -10,6 +10,7 @@ namespace lib_Celulares.Entidades
         public int Id { get; set; }
         public int MarcaId { get; set; }
         public int ComponenteId { get; set; }
+        public string? Imagen {  get; set; }
         public bool Disponible { get; set; }
         public int CantidadDisponible { get; set; }
         public string? Color { get; set; }

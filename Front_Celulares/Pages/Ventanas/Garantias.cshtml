@@ -1,0 +1,143 @@
+﻿@page
+@model GarantiasModel
+@{
+    ViewData["Title"] = "Garantias";
+}
+<form method="post"
+    enctype="multipart/form-data">
+
+    <div class="text-center">
+        <h1 class="display-4">Garantias</h1>
+        <div>
+            <input type="submit"
+                value="Consultar"
+                class="btn btn-secondary"
+                asp-page-handler="BtConsultar"/>
+            <input type="submit"
+                value="Nuevo"
+                class="btn btn-secondary"
+                asp-page-handler="BtNuevo"/>
+            <input type="submit"
+                value="Guardar"
+                class="btn btn-secondary"
+                asp-page-handler="BtGuardar"/>
+            <input id="flId" 
+                placeholder="Id"
+                asp-for="@Model.Filtro!.Id"/>
+        </div>
+
+        @if (ViewData.ContainsKey("Mensaje"))
+        {
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+        }
+        
+        @if (Model.Formulario || Model.Borrar)
+        {
+            <input type="hidden"
+                asp-for="@Model.Actual!.Id" />
+        }
+
+        @if (Model.Formulario)
+        {
+            <div>
+                <h3>Garantias</h3>
+
+                <label>
+                    FechaInicio
+                </label>
+                <input id=nmFechaInicio"
+                    asp-for="@Model.Actual!.FechaInicio"/>
+                <br />
+
+                <label>
+                    FechaVencimiento
+                </label>
+                <input id="nmFechaVencimiento"
+                    asp-for="@Model.Actual!.FechaVencimiento"/>
+                <br />
+
+                <label>
+                    TipoGarantia
+                </label>
+                <input id=nmTipoGarantia"
+                    asp-for="@Model.Actual!.TipoGarantia"/>
+                <br />
+
+                <label>
+                    Estado
+                </label>
+                <input id=nmEstado"
+                    asp-for="@Model.Actual!.Estado"/>
+                <br />
+            </div>
+        }
+
+        @if (Model.Borrar)
+        {
+            <div class="popup">
+                <div class="pp_del_inner">
+                    <h3>
+                        Mensaje
+                    </h3>
+
+                    <h4>
+                        ¿Quiere borrar la asignacion con información 
+                            @Model.Actual!.FechaInicio,
+                            @Model.Actual!.FechaVencimiento,
+                            @Model.Actual!.TipoGarantia,
+                            @Model.Actual!.Estado?
+                    </h4>
+                    <input type="submit"
+                        value="Cancelar"
+                        class="btn btn-secondary"
+                        asp-page-handler="BtConsultar"/>
+                    <input type="submit"
+                        value="Borrar"
+                        class="btn btn-secondary"
+                        asp-page-handler="BtBorrar"/>
+                </div>
+            </div>
+        }
+
+        @if (!Model.Formulario)
+        {
+            <br />
+            <br />
+            <div class="containers_vn panel panel-default">
+                <table class="tb_data table table-striped table-bordered table-hover">
+                    <tr>
+                        <th>FechaInicio</th>
+                        <th>FechaVencimiento</th>
+                        <th>TipoGarantia</th>
+                        <th>Estado</th>
+                    </tr>
+                    @if (Model != null && Model.Lista != null)
+                    {
+                        foreach (var elemento in Model.Lista)
+                        {
+                            <tr>
+                                <td>@elemento.FechaInicio</td>
+                                <td>@elemento.FechaVencimiento</td>
+                                <td>@elemento.TipoGarantia</td>
+                                <td>@elemento.Estado</td>
+                                <td>
+                                    <input type="submit"
+                                        value="Editar"
+                                        class="btn btn-secondary"
+                                        asp-page-handler="BtEditar"
+                                        asp-route-data="@elemento.Id"/>
+                                    <input type="submit"
+                                        value="Borrar"
+                                        class="btn btn-secondary"
+                                        asp-page-handler="BtPregBorrar"
+                                        asp-route-data="@elemento.Id"/>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        }
+
+        </div>
+</form>

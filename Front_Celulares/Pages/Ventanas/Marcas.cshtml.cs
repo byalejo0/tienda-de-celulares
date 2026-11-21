@@ -4,7 +4,7 @@ using lib_Celulares.Nucleo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace front_horarios.Pages.Ventanas
+namespace Front_Celulares.Pages.Ventanas
 {
     public class MarcasModel : PageModel
     {

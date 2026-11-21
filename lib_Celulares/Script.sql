@@ -71,7 +71,8 @@ CREATE TABLE [Celulares](
     [Color] NVARCHAR(50) NOT NULL,
     [Precio] DECIMAL(15,2) NOT NULL,
     [Modelo] NVARCHAR(100) NOT NULL,
-    [Almacenamiento] NVARCHAR(50) NOT NULL
+    [Almacenamiento] NVARCHAR(50) NOT NULL,
+    [Imagen] NVARCHAR(MAX) NULL
 );
 
 CREATE TABLE [Transportadoras](

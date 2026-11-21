@@ -40,7 +40,7 @@
         @if (Model.Formulario)
         {
             <div>
-                <h3>Asignación</h3>
+                <h3>Marcas</h3>
 
                 <label>
                     Logo
@@ -67,9 +67,8 @@
                 <label>
                     Telefono
                 </label>
-                <select id="nmTelefono"
-                    asp-for="@Model.Actual!.Telefono"
-                </select>
+                <input id="nmTelefono"
+                       asp-for="@Model.Actual!.Telefono"/>
                 <br />
 
                 <label>
@@ -102,7 +101,7 @@
                             @Model.Actual!.Nombre,
                             @Model.Actual!.Telefono,
                             @Model.Actual!.Correo,
-                            @Model.Actual!.Direccion,
+                            @Model.Actual!.Direccion?
                     </h4>
                     <input type="submit"
                         value="Cancelar"

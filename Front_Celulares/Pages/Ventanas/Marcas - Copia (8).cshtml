@@ -1,0 +1,171 @@
+﻿@page
+@model MarcasModel
+@{
+    ViewData["Title"] = "Marcas";
+}
+<form method="post"
+    enctype="multipart/form-data">
+
+    <div class="text-center">
+        <h1 class="display-4">Marcas</h1>
+        <div>
+            <input type="submit"
+                value="Consultar"
+                class="btn btn-secondary"
+                asp-page-handler="BtConsultar"/>
+            <input type="submit"
+                value="Nuevo"
+                class="btn btn-secondary"
+                asp-page-handler="BtNuevo"/>
+            <input type="submit"
+                value="Guardar"
+                class="btn btn-secondary"
+                asp-page-handler="BtGuardar"/>
+            <input id="flNombre" 
+                placeholder="Nombre"
+                asp-for="@Model.Filtro!.Nombre"/>
+        </div>
+
+        @if (ViewData.ContainsKey("Mensaje"))
+        {
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+        }
+        
+        @if (Model.Formulario || Model.Borrar)
+        {
+            <input type="hidden"
+                asp-for="@Model.Actual!.Id" />
+        }
+
+        @if (Model.Formulario)
+        {
+            <div>
+                <h3>Asignación</h3>
+
+                <label>
+                    Logo
+                </label>
+                @if (Model.Actual!.Logo != null)
+                {
+                    <img height="100"
+                         width="100"
+                         src="data:image;base64,
+                    @System.Convert.ToBase64String(
+                     Convert.FromBase64String(
+                      Model.Actual!.Logo))" />
+                }
+                <input type="file"
+                       asp-for="FormFile" />
+
+                <label>
+                    Nombre
+                </label>
+                <input id=nmNombre"
+                    asp-for="@Model.Actual!.Nombre"/>
+                <br />
+
+                <label>
+                    Telefono
+                </label>
+                <select id="nmTelefono"
+                    asp-for="@Model.Actual!.Telefono"
+                </select>
+                <br />
+
+                <label>
+                    Correo
+                </label>
+                <input id=nmCorreo"
+                    asp-for="@Model.Actual!.Correo"/>
+                <br />
+
+                <label>
+                    Dirección
+                </label>
+                <input id=nmDireccion"
+                    asp-for="@Model.Actual!.Direccion"/>
+                <br />
+            </div>
+        }
+
+        @if (Model.Borrar)
+        {
+            <div class="popup">
+                <div class="pp_del_inner">
+                    <h3>
+                        Mensaje
+                    </h3>
+
+                    <h4>
+                        ¿Quiere borrar la asignacion con información 
+                            @Model.Actual!.Logo,
+                            @Model.Actual!.Nombre,
+                            @Model.Actual!.Telefono,
+                            @Model.Actual!.Correo,
+                            @Model.Actual!.Direccion,
+                    </h4>
+                    <input type="submit"
+                        value="Cancelar"
+                        class="btn btn-secondary"
+                        asp-page-handler="BtConsultar"/>
+                    <input type="submit"
+                        value="Borrar"
+                        class="btn btn-secondary"
+                        asp-page-handler="BtBorrar"/>
+                </div>
+            </div>
+        }
+
+        @if (!Model.Formulario)
+        {
+            <br />
+            <br />
+            <div class="containers_vn panel panel-default">
+                <table class="tb_data table table-striped table-bordered table-hover">
+                    <tr>
+                        <th>Logo</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Dirección</th>
+                    </tr>
+                    @if (Model != null && Model.Lista != null)
+                    {
+                        foreach (var elemento in Model.Lista)
+                        {
+                            <tr>
+                            <td>
+                                @if (elemento.Logo != null)
+                                {
+                                    <img height="60"
+                                         width="60"
+                                         src="data:image;base64,
+                                    @System.Convert.ToBase64String(
+     Convert.FromBase64String(elemento.Logo))" />
+                                }
+                            </td>
+                                <td>@elemento.Nombre</td>
+                                <td>@elemento.Telefono</td>
+                                <td>@elemento.Correo</td>
+                                <td>@elemento.Direccion</td>
+                                <td>
+                                    <input type="submit"
+                                        value="Editar"
+                                        class="btn btn-secondary"
+                                        asp-page-handler="BtEditar"
+                                        asp-route-data="@elemento.Id"/>
+                                    <input type="submit"
+                                        value="Borrar"
+                                        class="btn btn-secondary"
+                                        asp-page-handler="BtPregBorrar"
+                                        asp-route-data="@elemento.Id"/>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+        }
+
+        </div>
+</form>
