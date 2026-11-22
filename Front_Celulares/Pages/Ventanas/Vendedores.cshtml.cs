@@ -6,20 +6,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Front_Celulares.Pages.Ventanas
 {
-    public class MarcasModel : PageModel
+    public class VendedoresModel : PageModel
     {
-        private IMarcasPresentacion IMarcasPresentacion;
+        private IVendedoresPresentacion IVendedoresPresentacion;
 
-        public MarcasModel(IMarcasPresentacion IMarcasPresentacion)
+        public VendedoresModel(IVendedoresPresentacion IVendedoresPresentacion)
         {
-            this.IMarcasPresentacion = IMarcasPresentacion;
-            this.Filtro = new Marcas();
+            this.IVendedoresPresentacion = IVendedoresPresentacion;
+            this.Filtro = new Vendedores();
         }
 
         public IFormFile? FormFile { get; set; }
-        [BindProperty] public List<Marcas> Lista { get; set; }
-        [BindProperty] public Marcas? Filtro { get; set; }
-        [BindProperty] public Marcas? Actual { get; set; }
+        [BindProperty] public List<Vendedores> Lista { get; set; }
+        [BindProperty] public Vendedores? Filtro { get; set; }
+        [BindProperty] public Vendedores? Actual { get; set; }
         [BindProperty] public bool Formulario { get; set; } = false;
         [BindProperty] public bool Borrar { get; set; } = false;
         
@@ -36,8 +36,8 @@ namespace Front_Celulares.Pages.Ventanas
                     return;
                 }
 
-                Filtro!.Nombre = Filtro!.Nombre ?? "";
-                Lista = this.IMarcasPresentacion.Buscar(Filtro!);
+                Filtro!.Id = Filtro!.Id;
+                Lista = this.IVendedoresPresentacion.Buscar(Filtro!);
             }
             catch (Exception ex)
             {
@@ -50,7 +50,7 @@ namespace Front_Celulares.Pages.Ventanas
             try
             {
                 Formulario = true;
-                this.Actual = new Marcas();
+                this.Actual = new Vendedores();
             }
             catch (Exception ex)
             {
@@ -62,18 +62,10 @@ namespace Front_Celulares.Pages.Ventanas
         {
             try
             {
-                if (FormFile != null)
-                {
-                    var memoryStream = new MemoryStream();
-                    FormFile.CopyToAsync(memoryStream).Wait();
-                    Actual!.Imagen = Convert.ToBase64String(memoryStream.ToArray());
-                    memoryStream.Dispose();
-                }
-
                 if (this.Actual!.Id == 0)
-                    this.Actual = this.IMarcasPresentacion.Insertar(this.Actual!);
+                    this.Actual = this.IVendedoresPresentacion.Insertar(this.Actual!);
                 else
-                    this.Actual = this.IMarcasPresentacion.Actualizar(this.Actual!);
+                    this.Actual = this.IVendedoresPresentacion.Actualizar(this.Actual!);
             }
             catch (Exception ex)
             {
@@ -119,7 +111,7 @@ namespace Front_Celulares.Pages.Ventanas
             {
                 if (this.Actual!.Id == 0)
                     return;
-                this.Actual = this.IMarcasPresentacion.Borrar(this.Actual!);
+                this.Actual = this.IVendedoresPresentacion.Borrar(this.Actual!);
             }
             catch (Exception ex)
             {

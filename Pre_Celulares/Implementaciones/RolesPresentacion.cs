@@ -76,11 +76,7 @@ namespace Pre_Celulares.Implementaciones
 
         private bool Validar(Roles entidad)
         {
-            return string.IsNullOrEmpty(entidad.Color) ||
-                string.IsNullOrEmpty(entidad.Modelo) ||
-                string.IsNullOrEmpty(entidad.Almacenamiento) ||
-                entidad.CantidadDisponible < 0 ||
-                entidad.Precio <= 0;
+            return entidad.UsuarioId <= 0;
         }
 
     }

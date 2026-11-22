@@ -10,7 +10,7 @@ namespace lib_Celulares.Entidades
         public string? Nombre { get; set; }
         public string? Correo { get; set; }
         public string? Telefono { get; set; }
-
+        public string? Logo { get; set; }
         public List<Envios>? Envios { get; set; }
     }
 }

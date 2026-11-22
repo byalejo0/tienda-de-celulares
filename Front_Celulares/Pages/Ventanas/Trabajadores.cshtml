@@ -1,13 +1,13 @@
 ﻿@page
-@model MarcasModel
+@model TrabajadoresModel
 @{
-    ViewData["Title"] = "Marcas";
+    ViewData["Title"] = "Trabajadores";
 }
 <form method="post"
     enctype="multipart/form-data">
 
     <div class="text-center">
-        <h1 class="display-4">Marcas</h1>
+        <h1 class="display-4">Trabajadores</h1>
         <div>
             <input type="submit"
                 value="Consultar"
@@ -21,9 +21,9 @@
                 value="Guardar"
                 class="btn btn-secondary"
                 asp-page-handler="BtGuardar"/>
-            <input id="flNombre" 
-                placeholder="Nombre"
-                asp-for="@Model.Filtro!.Nombre"/>
+            <input id="flId" 
+                placeholder="Id"
+                asp-for="@Model.Filtro!.Id"/>
         </div>
 
         @if (ViewData.ContainsKey("Mensaje"))
@@ -40,50 +40,27 @@
         @if (Model.Formulario)
         {
             <div>
-                <h3>Asignación</h3>
+                <h3>Trabajadores</h3>
 
                 <label>
-                    Logo
+                    Experiencia
                 </label>
-                @if (Model.Actual!.Logo != null)
-                {
-                    <img height="100"
-                         width="100"
-                         src="data:image;base64,
-                    @System.Convert.ToBase64String(
-                     Convert.FromBase64String(
-                      Model.Actual!.Logo))" />
-                }
-                <input type="file"
-                       asp-for="FormFile" />
-
-                <label>
-                    Nombre
-                </label>
-                <input id=nmNombre"
-                    asp-for="@Model.Actual!.Nombre"/>
+                <input id=nmExperiencia"
+                    asp-for="@Model.Actual!.Experiencia"/>
                 <br />
 
                 <label>
-                    Telefono
+                    Salario
                 </label>
-                <select id="nmTelefono"
-                    asp-for="@Model.Actual!.Telefono"
-                </select>
+                <input id=nmSalario"
+                    asp-for="@Model.Actual!.Salario"/>
                 <br />
 
                 <label>
-                    Correo
+                    Turno
                 </label>
-                <input id=nmCorreo"
-                    asp-for="@Model.Actual!.Correo"/>
-                <br />
-
-                <label>
-                    Dirección
-                </label>
-                <input id=nmDireccion"
-                    asp-for="@Model.Actual!.Direccion"/>
+                <input id=nmTurno"
+                    asp-for="@Model.Actual!.Turno"/>
                 <br />
             </div>
         }
@@ -98,11 +75,9 @@
 
                     <h4>
                         ¿Quiere borrar la asignacion con información 
-                            @Model.Actual!.Logo,
-                            @Model.Actual!.Nombre,
-                            @Model.Actual!.Telefono,
-                            @Model.Actual!.Correo,
-                            @Model.Actual!.Direccion,
+                            @Model.Actual!.Experiencia,
+                            @Model.Actual!.Salario,
+                            @Model.Actual!.Turno?
                     </h4>
                     <input type="submit"
                         value="Cancelar"
@@ -123,31 +98,18 @@
             <div class="containers_vn panel panel-default">
                 <table class="tb_data table table-striped table-bordered table-hover">
                     <tr>
-                        <th>Logo</th>
-                        <th>Nombre</th>
-                        <th>Telefono</th>
-                        <th>Correo</th>
-                        <th>Dirección</th>
+                        <th>Experiencia</th>
+                        <th>Salario</th>
+                        <th>Turno</th>
                     </tr>
                     @if (Model != null && Model.Lista != null)
                     {
                         foreach (var elemento in Model.Lista)
                         {
                             <tr>
-                            <td>
-                                @if (elemento.Logo != null)
-                                {
-                                    <img height="60"
-                                         width="60"
-                                         src="data:image;base64,
-                                    @System.Convert.ToBase64String(
-     Convert.FromBase64String(elemento.Logo))" />
-                                }
-                            </td>
-                                <td>@elemento.Nombre</td>
-                                <td>@elemento.Telefono</td>
-                                <td>@elemento.Correo</td>
-                                <td>@elemento.Direccion</td>
+                                <td>@elemento.Experiencia</td>
+                                <td>@elemento.Salario</td>
+                                <td>@elemento.Turno</td>
                                 <td>
                                     <input type="submit"
                                         value="Editar"

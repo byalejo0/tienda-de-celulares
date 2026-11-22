@@ -1,4 +1,4 @@
-using aplicaciones_horarios.nucleo;
+using lib_Celulares.Nucleo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

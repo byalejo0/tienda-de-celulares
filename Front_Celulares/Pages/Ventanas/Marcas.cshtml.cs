@@ -66,7 +66,7 @@ namespace Front_Celulares.Pages.Ventanas
                 {
                     var memoryStream = new MemoryStream();
                     FormFile.CopyToAsync(memoryStream).Wait();
-                    Actual!.Imagen = Convert.ToBase64String(memoryStream.ToArray());
+                    Actual!.Logo = Convert.ToBase64String(memoryStream.ToArray());
                     memoryStream.Dispose();
                 }
 
