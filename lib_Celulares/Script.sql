@@ -1,4 +1,5 @@
-﻿CREATE DATABASE tienda_celulares_db;
+﻿/*
+CREATE DATABASE tienda_celulares_db;
 GO
 USE tienda_celulares_db;
 GO
@@ -211,7 +212,7 @@ CREATE TABLE [Permisos](
     [RolId] INT NOT NULL REFERENCES [Roles] ([Id]),
     [Ventana] NVARCHAR(100) NOT NULL
 );
--- 1. Personas (Agregamos 6 en total para tener 3 Clientes y 3 Trabajadores distintos)
+
 INSERT INTO [Personas] 
     ([Cedula], [Nombre], [Edad], [Direccion])
 VALUES
@@ -222,7 +223,6 @@ VALUES
     ('5566778899', 'Andres Lopez', 35, 'Carrera 70 # 44-12'),
     ('9988776655', 'Sofia Ramirez', 29, 'Transversal 39 # 72-18');
 
--- 2. Clientes (Referencian a Personas 1, 2 y 3)
 INSERT INTO [Clientes]
     ([PersonaId], [TipoCliente], [PaisResidencia], [Correo])
 VALUES
@@ -230,7 +230,6 @@ VALUES
     (2, 'VIP', 'Colombia', 'maria.gomez@hotmail.com'),
     (3, 'Nuevo', 'Colombia', 'carlos.rodriguez@outlook.com');
 
--- 3. Trabajadores (Referencian a Personas 4, 5 y 6)
 INSERT INTO [Trabajadores]
     ([PersonaId], [Experiencia], [Salario], [Turno])
 VALUES
@@ -238,7 +237,6 @@ VALUES
     (5, '5 años', 3200000.00, 'Mixto'),
     (6, '3 años', 2800000.00, 'Nocturno');
 
--- 4. Vendedores (Referencian a Trabajadores 1, 2 y 3)
 INSERT INTO [Vendedores]
     ([TrabajadorId], [CelularesVendidos], [MarcaEncargada])
 VALUES
@@ -246,7 +244,6 @@ VALUES
     (2, 25, 'Apple'),
     (3, 18, 'Xiaomi');
 
--- 5. Tecnicos (Referencian a Trabajadores 1, 2 y 3)
 INSERT INTO [Tecnicos]
     ([TrabajadorId], [CelularesReparados], [Especializacion])
 VALUES
@@ -254,7 +251,6 @@ VALUES
     (2, 40, 'Microsoldadura y placas base'),
     (3, 22, 'Software y recuperación de datos');
 
--- 6. Marcas
 INSERT INTO [Marcas]
     ([Nombre], [Telefono], [Correo], [Direccion])
 VALUES
@@ -262,7 +258,6 @@ VALUES
     ('Apple', '3002345678', 'soporte@apple.com', 'Carrera 11 # 82-01'),
     ('Xiaomi', '3003456789', 'ventas@xiaomi.com', 'Avenida 19 # 100-45');
 
--- 7. Componentes
 INSERT INTO [Componentes]
     ([Procesador], [MemoriaRam], [Pantalla], [Bateria], [Camara], [SistemaOperativo])
 VALUES
@@ -270,7 +265,6 @@ VALUES
     ('Apple A17 Pro', '8 GB', '6.1 pulgadas Super Retina XDR', '3274 mAh', '48 MP', 'iOS 17'),
     ('Dimensity 9200+', '12 GB', '6.67 pulgadas AMOLED 144Hz', '5000 mAh', '50 MP Leica', 'Android 14 (HyperOS)');
 
--- 8. Celulares (Referencian a Marcas 1, 2, 3 y Componentes 1, 2, 3)
 INSERT INTO [Celulares]
     ([MarcaId], [ComponenteId], [Disponible], [CantidadDisponible], [Color], [Precio], [Modelo], [Almacenamiento])
 VALUES
@@ -278,7 +272,6 @@ VALUES
     (2, 2, 1, 15, 'Titanio Natural', 4800000.00, 'iPhone 15 Pro', '256 GB'),
     (3, 3, 1, 30, 'Azul', 2100000.00, 'Xiaomi 13T Pro', '512 GB');
 
--- 9. Transportadoras
 INSERT INTO [Transportadoras]
     ([Nombre], [Correo], [Telefono])
 VALUES
@@ -286,7 +279,6 @@ VALUES
     ('Coordinadora', 'envios@coordinadora.com', '3108765432'),
     ('Inter Rapidisimo', 'soporte@interrapidisimo.com', '3207654321');
 
--- 10. Proveedores
 INSERT INTO [Proveedores]
     ([Nombre], [Correo], [Telefono], [Direccion])
 VALUES
@@ -294,7 +286,6 @@ VALUES
     ('Importadora Tech Colombia', 'comercial@importadoratech.co', '3156789012', 'Calle 80 # 25-40'),
     ('Distribuidora Global Movil', 'pedidos@globalmovil.com', '3189012345', 'Zona Franca Bodega 12');
 
--- 11. Compras (Referencian a Proveedores 1, 2, 3 y Trabajadores 1, 2, 3)
 INSERT INTO [Compras]
     ([ProveedorId], [TrabajadorId], [FechaCompra], [Total], [Estado])
 VALUES
@@ -302,7 +293,6 @@ VALUES
     (2, 2, '2026-10-05 10:30:00', 38000000.00, 'Completada'),
     (3, 3, '2026-10-10 14:15:00', 16000000.00, 'Pendiente');
 
--- 12. DetallesCompras (Referencian a Compras 1, 2, 3 y Celulares 1, 2, 3)
 INSERT INTO [DetallesCompras]
     ([CompraId], [CelularId], [Cantidad], [PrecioCompra])
 VALUES
@@ -310,7 +300,6 @@ VALUES
     (2, 2, 10, 3800000.00),
     (3, 3, 10, 1600000.00);
 
--- 13. Bonos (Referencian a Tecnicos 1, 2, 3)
 INSERT INTO [Bonos]
     ([TecnicoId], [CantidadReparaciones], [ValorBono])
 VALUES
@@ -318,7 +307,6 @@ VALUES
     (2, 40, 1200000.00),
     (3, 22, 700000.00);
 
--- 14. Reparaciones (Referencian a Celulares, Tecnicos, Clientes y Bonos 1, 2, 3)
 INSERT INTO [Reparaciones]
     ([CelularId], [TecnicoId], [ClienteId], [BonoId], [FechaIngreso], [FechaEntrega], [Estado])
 VALUES
@@ -326,7 +314,6 @@ VALUES
     (2, 2, 2, 2, '2026-10-04 11:00:00', '2026-10-06 17:00:00', 'Reparado'),
     (3, 3, 3, 3, '2026-10-08 10:00:00', '2026-10-10 12:00:00', 'En proceso');
 
--- 15. DetallesReparaciones (Referencian a Reparaciones 1, 2, 3)
 INSERT INTO [DetallesReparaciones]
     ([ReparacionId], [Diagnostico], [ServicioRealizado], [ComponenteReemplazado], [Cantidad], [Precio], [Subtotal])
 VALUES
@@ -334,7 +321,6 @@ VALUES
     (2, 'Cortocircuito en placa', 'Reconstrucción de pistas', 'IC de carga', 1, 450000.00, 450000.00),
     (3, 'Batería degradada', 'Reemplazo de batería', 'Batería 5000 mAh', 1, 180000.00, 180000.00);
 
--- 16. Facturas (Referencian a Clientes, Trabajadores y Reparaciones 1, 2, 3)
 INSERT INTO [Facturas]
     ([ClienteId], [TrabajadorId], [ReparacionId], [Fecha], [Subtotal], [Iva], [Total])
 VALUES
@@ -342,7 +328,6 @@ VALUES
     (2, 2, 2, '2026-10-06 18:00:00', 4800000.00, 912000.00, 5712000.00),
     (3, 3, 3, '2026-10-10 14:00:00', 2100000.00, 399000.00, 2499000.00);
 
--- 17. DetallesFacturas (Referencian a Facturas 1, 2, 3 y Celulares 1, 2, 3)
 INSERT INTO [DetallesFacturas]
     ([FacturaId], [CelularId], [Cantidad], [Subtotal], [Iva], [Total])
 VALUES
@@ -350,7 +335,6 @@ VALUES
     (2, 2, 1, 4800000.00, 912000.00, 5712000.00),
     (3, 3, 1, 2100000.00, 399000.00, 2499000.00);
 
--- 18. Garantias (Referencian a Celulares, Clientes y Facturas 1, 2, 3)
 INSERT INTO [Garantias]
     ([CelularId], [ClienteId], [FacturaId], [FechaInicio], [FechaVencimiento], [TipoGarantia], [Estado])
 VALUES
@@ -358,7 +342,6 @@ VALUES
     (2, 2, 2, '2026-10-06 18:00:00', '2027-10-06 18:00:00', 'Garantia extendida AppleCare', 'Activa'),
     (3, 3, 3, '2026-10-10 14:00:00', '2027-10-10 14:00:00', 'Garantia de fabrica', 'Activa');
 
--- 19. Envios (Referencian a Facturas, Transportadoras y Clientes 1, 2, 3)
 INSERT INTO [Envios]
     ([FacturaId], [TransportadoraId], [ClienteId], [FechaEnvio], [FechaEntrega], [CostoEnvio])
 VALUES
@@ -366,7 +349,6 @@ VALUES
     (2, 2, 2, '2026-10-07 09:30:00', '2026-10-08 11:00:00', 30000.00),
     (3, 3, 3, '2026-10-11 10:00:00', '2026-10-13 16:30:00', 20000.00);
 
--- 20. Devoluciones (Referencian a Facturas y Clientes 1, 2, 3)
 INSERT INTO [Devoluciones]
     ([FacturaId], [ClienteId], [FechaDevolucion], [Motivo], [ValorDevuelto])
 VALUES
@@ -374,4 +356,107 @@ VALUES
     (2, 2, '2026-10-12 15:20:00', 'Cliente solicitó cambio de color', 5712000.00),
     (3, 3, '2026-10-15 09:45:00', 'Problema con carga rápida', 2499000.00);
 
--- Siguiente paso: ejecutar Script_Seguridad.sql (usuarios, roles y permisos).
+
+
+SET NOCOUNT ON;
+
+UPDATE Permisos SET Ventana = N'Facturas'     WHERE Ventana LIKE N'Facturas(%';
+UPDATE Permisos SET Ventana = N'Compras'      WHERE Ventana LIKE N'Compras(%';
+UPDATE Permisos SET Ventana = N'Reparaciones' WHERE Ventana LIKE N'Reparaciones(%';
+
+DECLARE @Ventanas TABLE (Ventana NVARCHAR(100) NOT NULL, Nivel INT NOT NULL);
+INSERT INTO @Ventanas (Ventana, Nivel) VALUES
+    (N'Celulares', 1),
+    (N'Marcas', 1),
+    (N'Carrito', 1),
+    (N'Facturas', 1),
+    (N'DetallesFacturas', 1),
+    (N'Garantias', 1),
+    (N'Envios', 1),
+    (N'Devoluciones', 1),
+    (N'Reparaciones', 1),
+    (N'DetallesReparaciones', 1),
+    (N'Clientes', 2),
+    (N'Componentes', 2),
+    (N'Compras', 2),
+    (N'DetallesCompras', 2),
+    (N'Proveedores', 2),
+    (N'Transportadoras', 2),
+    (N'Personas', 3),
+    (N'Trabajadores', 3),
+    (N'Vendedores', 3),
+    (N'Tecnicos', 3),
+    (N'Bonos', 3),
+    (N'Usuarios', 3),
+    (N'Roles', 3),
+    (N'Permisos', 3),
+    (N'Auditorias', 3);
+
+DECLARE @Cuentas TABLE (
+    Usuario  NVARCHAR(30)  NOT NULL,
+    Clave    NVARCHAR(100) NOT NULL,
+    Rol      NVARCHAR(30)  NOT NULL,
+    NivelMax INT           NOT NULL);
+INSERT INTO @Cuentas (Usuario, Clave, Rol, NivelMax) VALUES
+    (N'Usuario',    N'123', N'Administrador', 3),
+    (N'Trabajador', N'123', N'Trabajador',    2),
+    (N'Cliente',    N'123', N'Cliente',       1);
+
+INSERT INTO [Usuarios] ([Nombre_Usuario], [Contraseña])
+SELECT c.Usuario, c.Clave
+FROM @Cuentas c
+WHERE NOT EXISTS (SELECT 1 FROM [Usuarios] u WHERE u.[Nombre_Usuario] = c.Usuario);
+
+INSERT INTO [Roles] ([UsuarioId], [Nombre])
+SELECT u.[Id], c.Rol
+FROM @Cuentas c
+JOIN [Usuarios] u ON u.[Nombre_Usuario] = c.Usuario
+WHERE NOT EXISTS (SELECT 1 FROM [Roles] r WHERE r.[UsuarioId] = u.[Id] AND r.[Nombre] = c.Rol);
+
+INSERT INTO [Permisos] ([RolId], [Ventana])
+SELECT r.[Id], v.Ventana
+FROM @Cuentas c
+JOIN [Usuarios] u ON u.[Nombre_Usuario] = c.Usuario
+JOIN [Roles] r ON r.[UsuarioId] = u.[Id] AND r.[Nombre] = c.Rol
+JOIN @Ventanas v ON v.Nivel <= c.NivelMax
+WHERE NOT EXISTS (SELECT 1 FROM [Permisos] p WHERE p.[RolId] = r.[Id] AND p.[Ventana] = v.Ventana);
+
+SELECT u.[Nombre_Usuario] AS Usuario, r.[Nombre] AS Rol, COUNT(p.[Id]) AS Ventanas
+FROM [Usuarios] u
+JOIN [Roles] r ON r.[UsuarioId] = u.[Id]
+LEFT JOIN [Permisos] p ON p.[RolId] = r.[Id]
+GROUP BY u.[Nombre_Usuario], r.[Nombre]
+ORDER BY u.[Nombre_Usuario];
+GO
+
+
+SET NOCOUNT ON;
+
+DECLARE @Ejemplos TABLE (Usuario NVARCHAR(30), Descripcion NVARCHAR(200), Fecha DATETIME);
+INSERT INTO @Ejemplos (Usuario, Descripcion, Fecha) VALUES
+    (N'Usuario',    N'Inicio de sesión (Administrador)',          '2026-11-20 08:00:00'),
+    (N'Usuario',    N'Guardó cambios en Trabajadores',            '2026-11-20 08:15:00'),
+    (N'Usuario',    N'Guardó cambios en Bonos',                   '2026-11-20 08:40:00'),
+    (N'Usuario',    N'Cierre de sesión',                          '2026-11-20 09:00:00'),
+    (N'Trabajador', N'Inicio de sesión (Trabajador)',             '2026-11-21 09:00:00'),
+    (N'Trabajador', N'Guardó cambios en Compras',                 '2026-11-21 09:20:00'),
+    (N'Trabajador', N'Guardó cambios en Facturas',                '2026-11-21 10:05:00'),
+    (N'Trabajador', N'Borró un registro en Devoluciones',         '2026-11-21 11:30:00'),
+    (N'Trabajador', N'Cierre de sesión',                          '2026-11-21 12:00:00'),
+    (N'Cliente',    N'Inicio de sesión (Cliente)',                '2026-11-22 15:00:00'),
+    (N'Cliente',    N'Finalizó una compra en Carrito',            '2026-11-22 15:12:00'),
+    (N'Cliente',    N'Cierre de sesión',                          '2026-11-22 15:20:00');
+
+INSERT INTO [Auditorias] ([UsuarioId], [Descripción], [Fecha])
+SELECT u.[Id], e.Descripcion, e.Fecha
+FROM @Ejemplos e
+JOIN [Usuarios] u ON u.[Nombre_Usuario] = e.Usuario
+WHERE NOT EXISTS (SELECT 1 FROM [Auditorias] a
+                  WHERE a.[UsuarioId] = u.[Id] AND a.[Descripción] = e.Descripcion AND a.[Fecha] = e.Fecha);
+
+SELECT a.[Id], u.[Nombre_Usuario] AS Usuario, a.[Descripción], a.[Fecha]
+FROM [Auditorias] a JOIN [Usuarios] u ON u.[Id] = a.[UsuarioId]
+ORDER BY a.[Fecha];
+GO
+
+*/

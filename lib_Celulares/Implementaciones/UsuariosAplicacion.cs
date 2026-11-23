@@ -51,7 +51,7 @@ namespace lib_Celulares.Implementaciones
             return this.IConexion.Usuarios!
                 .Take(5).ToList();
         }
-
+        +
         public Usuarios Insertar(Usuarios entidad)
         {
             if (entidad.Id != 0)
