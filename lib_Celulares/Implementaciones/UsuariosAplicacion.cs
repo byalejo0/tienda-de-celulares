@@ -1,5 +1,6 @@
 ﻿using lib_Celulares.Entidades;
 using lib_Celulares.Interfaces;
+using lib_Celulares.Nucleo;
 using Microsoft.EntityFrameworkCore;
 
 namespace lib_Celulares.Implementaciones
@@ -61,6 +62,50 @@ namespace lib_Celulares.Implementaciones
             this.IConexion.Usuarios!.Add(entidad!);
             this.IConexion.SaveChanges();
             return entidad;
+        }
+
+        public SesionUsuario Autenticar(Usuarios entidad)
+        {
+            var sesion = new SesionUsuario();
+
+            if (string.IsNullOrWhiteSpace(entidad.Nombre_Usuario) ||
+                string.IsNullOrEmpty(entidad.Contraseña))
+                return sesion;
+
+            // El nombre se busca en la base de datos; la contraseña se compara
+            // aqui en C# para que SI distinga mayusculas de minusculas.
+            var nombre = entidad.Nombre_Usuario.Trim();
+            var usuario = this.IConexion.Usuarios!
+                .Where(x => x.Nombre_Usuario == nombre)
+                .ToList()
+                .FirstOrDefault(x => string.Equals(x.Contraseña,
+                    entidad.Contraseña, StringComparison.Ordinal));
+
+            if (usuario == null)
+                return sesion;
+
+            // Usuarios -> Roles (Roles.UsuarioId) -> Permisos (Permisos.RolId)
+            var roles = this.IConexion.Roles!
+                .Where(x => x.UsuarioId == usuario.Id)
+                .ToList();
+
+            var permisos = this.IConexion.Permisos!
+                .Where(x => x._Rol!.UsuarioId == usuario.Id)
+                .ToList();
+
+            sesion.Id = usuario.Id;
+            sesion.Nombre_Usuario = usuario.Nombre_Usuario;
+            sesion.Roles = roles
+                .Where(x => !string.IsNullOrEmpty(x.Nombre))
+                .Select(x => x.Nombre!)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+            sesion.Ventanas = permisos
+                .Where(x => !string.IsNullOrEmpty(x.Ventana))
+                .Select(x => x.Ventana!)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+            return sesion;
         }
 
         private bool Validar(Usuarios entidad)

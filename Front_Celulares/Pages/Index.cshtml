@@ -12,6 +12,13 @@
             Login
         </h3>
 
+        @if (!string.IsNullOrEmpty(Model.MensajeLogin))
+        {
+            <div class="alert alert-danger" role="alert">
+                @Model.MensajeLogin
+            </div>
+        }
+
         <form method="POST">
             <div style="width:60%">
                 <div class="form-group">
@@ -48,8 +55,9 @@ else
 {
     <div class="text-center">
         <h1 class="display-4">
-            Bienvenido
+            Bienvenido, @Model.NombreUsuario
         </h1>
+        <span class="rol-badge @Model.Perfil.Clase">@Model.Rol</span>
 
         <form method="POST">
             <input type="submit"
@@ -58,4 +66,32 @@ else
                    class="btn btn-default" />
         </form>
     </div>
+
+    @* Interfaz segun el rol: titulo, color y solo las ventanas que dicta Permisos *@
+    <section class="panel-rol @Model.Perfil.Clase">
+        <div class="panel-rol-cabecera">
+            <h2>@Model.Perfil.Titulo</h2>
+            <p>@Model.Perfil.Descripcion</p>
+        </div>
+
+        @if (!Model.Grupos.Any())
+        {
+            <p class="panel-rol-vacio">
+                Tu rol todavía no tiene ventanas asignadas. Habla con el administrador.
+            </p>
+        }
+
+        @foreach (var grupo in Model.Grupos)
+        {
+            <div class="panel-rol-grupo">
+                <h3>@grupo.Titulo</h3>
+                <div class="panel-rol-rejilla">
+                    @foreach (var v in grupo.Ventanas)
+                    {
+                        <a class="ventana-card" asp-area="" asp-page="/Ventanas/@v.Pagina">@v.Etiqueta</a>
+                    }
+                </div>
+            </div>
+        }
+    </section>
 }

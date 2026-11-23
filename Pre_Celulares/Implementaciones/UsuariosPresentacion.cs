@@ -1,4 +1,5 @@
 ﻿using lib_Celulares.Entidades;
+using lib_Celulares.Nucleo;
 using Pre_Celulares.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,18 @@ namespace Pre_Celulares.Implementaciones
 
             var task = this.IComunicaciones.Ejecutar<Usuarios>(
                 "Usuarios/Insertar",
+                entidad);
+            task.Wait();
+            return task.Result;
+        }
+
+        public SesionUsuario Autenticar(Usuarios entidad)
+        {
+            if (Validar(entidad))
+                throw new Exception("Falta informacion");
+
+            var task = this.IComunicaciones.Ejecutar<SesionUsuario>(
+                "Usuarios/Autenticar",
                 entidad);
             task.Wait();
             return task.Result;

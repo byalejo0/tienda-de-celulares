@@ -1,5 +1,6 @@
 using lib_Celulares.Entidades;
 using lib_Celulares.Interfaces;
+using lib_Celulares.Nucleo;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cnl_Celulares.Controllers
@@ -43,6 +44,12 @@ namespace cnl_Celulares.Controllers
         public Usuarios Borrar(Usuarios entidad)
         {
             return this.IUsuariosAplicacion.Borrar(entidad);
+        }
+
+        [HttpPost]
+        public SesionUsuario Autenticar(Usuarios entidad)
+        {
+            return this.IUsuariosAplicacion.Autenticar(entidad);
         }
     }
 }

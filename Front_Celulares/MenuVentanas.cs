@@ -2,28 +2,30 @@
 {
     public record Ventana(string Pagina, string Etiqueta);
 
-    public record GrupoVentanas(string Titulo, string[] Roles, Ventana[] Ventanas);
+    public record GrupoVentanas(string Titulo, Ventana[] Ventanas);
 
-    // Quien puede ver que ventanas. Cliente < Trabajador < Administrador:
-    // cada rol ve su lista y las de los roles de abajo; el Administrador ve todo.
+    // Como se ve el inicio segun el rol: clase CSS, titulo y descripcion.
+    public record PerfilRol(string Clase, string Titulo, string Descripcion);
+
+    // Catalogo de ventanas de la aplicacion, agrupadas para el menu.
+    //
+    // Quien puede entrar a cada ventana NO se define aqui: sale de la base de
+    // datos (Usuarios -> Roles -> Permisos). Permisos.Ventana debe ser igual a
+    // Ventana.Pagina. Para sumar una ventana nueva: crear la pagina, agregarla
+    // a este catalogo y crear el Permiso para el rol que deba verla.
     public static class MenuVentanas
     {
         public const string Cliente = "Cliente";
         public const string Trabajador = "Trabajador";
         public const string Administrador = "Administrador";
 
-        // Usuarios de prueba: "Usuario.Clave" -> rol
-        private static readonly Dictionary<string, string> Credenciales = new()
-        {
-            ["Usuario.123"] = Administrador,
-            ["Trabajador.123"] = Trabajador,
-            ["Cliente.123"] = Cliente
-        };
+        // Si un usuario tiene varios roles, manda el de mayor jerarquia.
+        private static readonly string[] PrioridadRoles = [Administrador, Trabajador, Cliente];
 
         public static readonly GrupoVentanas[] Grupos =
         [
             // Lo que gira alrededor del cliente: catálogo y sus trámites
-            new("Tienda", [Cliente, Trabajador, Administrador],
+            new("Tienda",
             [
                 new("Celulares", "Celulares"),
                 new("Marcas", "Marcas"),
@@ -36,7 +38,7 @@
             ]),
 
             // El día a día del local: clientes, inventario y abastecimiento
-            new("Operación", [Trabajador, Administrador],
+            new("Operación",
             [
                 new("Clientes", "Clientes"),
                 new("Componentes", "Componentes"),
@@ -45,8 +47,8 @@
                 new("Transportadoras", "Transportadoras")
             ]),
 
-            // Datos personales, salarios, bonos y cuentas: solo Administrador
-            new("Administración", [Administrador],
+            // Datos personales, salarios, bonos y cuentas
+            new("Administración",
             [
                 new("Personas", "Personas"),
                 new("Trabajadores", "Trabajadores"),
@@ -57,10 +59,50 @@
             ])
         ];
 
-        public static string? RolDe(string credencial)
-            => Credenciales.TryGetValue(credencial, out var rol) ? rol : null;
+        // Los grupos con solo las ventanas permitidas; los grupos vacios no se muestran.
+        public static IEnumerable<GrupoVentanas> GruposVisibles(IEnumerable<string> ventanasPermitidas)
+        {
+            var permitidas = new HashSet<string>(ventanasPermitidas, StringComparer.OrdinalIgnoreCase);
 
-        public static IEnumerable<GrupoVentanas> GruposVisibles(string? rol)
-            => rol == null ? Enumerable.Empty<GrupoVentanas>() : Grupos.Where(g => g.Roles.Contains(rol));
+            return Grupos
+                .Select(g => new GrupoVentanas(
+                    g.Titulo,
+                    g.Ventanas.Where(v => permitidas.Contains(v.Pagina)).ToArray()))
+                .Where(g => g.Ventanas.Length > 0);
+        }
+
+        // El rol "principal" decide que interfaz de inicio se muestra.
+        public static string RolPrincipal(IEnumerable<string> roles)
+        {
+            var lista = roles.ToList();
+
+            foreach (var prioridad in PrioridadRoles)
+            {
+                var encontrado = lista.FirstOrDefault(r =>
+                    string.Equals(r, prioridad, StringComparison.OrdinalIgnoreCase));
+                if (encontrado != null)
+                    return prioridad;
+            }
+
+            return lista.FirstOrDefault() ?? string.Empty;
+        }
+
+        public static PerfilRol PerfilDe(string? rol)
+        {
+            if (string.Equals(rol, Administrador, StringComparison.OrdinalIgnoreCase))
+                return new PerfilRol("rol-administrador", "Panel de administración",
+                    "Gestiona el personal, los bonos y las cuentas, además de toda la operación de la tienda.");
+
+            if (string.Equals(rol, Trabajador, StringComparison.OrdinalIgnoreCase))
+                return new PerfilRol("rol-trabajador", "Panel de trabajo",
+                    "Atiende clientes y lleva el inventario y el abastecimiento de la tienda.");
+
+            if (string.Equals(rol, Cliente, StringComparison.OrdinalIgnoreCase))
+                return new PerfilRol("rol-cliente", "Mi tienda",
+                    "Explora el catálogo, arma tu carrito y gestiona facturas, garantías, envíos, devoluciones y reparaciones.");
+
+            return new PerfilRol("rol-otro", "Mi espacio",
+                "Estas son las ventanas disponibles para tu usuario.");
+        }
     }
 }

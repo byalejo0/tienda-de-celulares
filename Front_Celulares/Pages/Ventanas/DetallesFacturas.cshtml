@@ -1,13 +1,13 @@
 ﻿@page
-@model ReparacionesModel
+@model DetallesFacturasModel
 @{
-    ViewData["Title"] = "Reparaciones";
+    ViewData["Title"] = "DetallesFacturas";
 }
 <form method="post"
     enctype="multipart/form-data">
 
     <div class="text-center">
-        <h1 class="display-4">Reparaciones</h1>
+        <h1 class="display-4">DetallesFacturas</h1>
         <div>
             <input type="submit"
                 value="Consultar"
@@ -21,9 +21,9 @@
                 value="Guardar"
                 class="btn btn-secondary"
                 asp-page-handler="BtGuardar"/>
-            <input id="flId" 
-                placeholder="Id"
-                asp-for="@Model.Filtro!.Id"/>
+            <input id="flTotal" 
+                placeholder="Total"
+                asp-for="@Model.Filtro!.Total"/>
         </div>
 
         @if (ViewData.ContainsKey("Mensaje"))
@@ -40,29 +40,38 @@
         @if (Model.Formulario)
         {
             <div>
-                <h3>Reparaciones</h3>
+                <h3>Detalles Facturas</h3>
 
                 <label>
-                    FechaIngreso
+                    Cantidad
                 </label>
-                <input id=nmFechaIngreso"
-                    asp-for="@Model.Actual!.FechaIngreso"/>
+                <input id=nmCantidad"
+                    asp-for="@Model.Actual!.Cantidad"/>
                 <br />
 
                 <label>
-                    FechaEntrega
+                    <label>
+                    SubTotal
                 </label>
-                <input id="nmFechaEntrega"
-                    asp-for="@Model.Actual!.FechaEntrega"/>
+                <input id=nmSubtotal"
+                    asp-for="@Model.Actual!.Subtotal"/>
                 <br />
 
                 <label>
-                    Estado
-                </label>
-                <input id=nmEstado"
-                    asp-for="@Model.Actual!.Estado"/>
-                <br />
+                    <label>
+                        Iva
+                    </label>
+                    <input id=nmIva"
+                           asp-for="@Model.Actual!.Iva" />
+                    <br />
 
+                <label>
+                    <label>
+                        Total
+                    </label>
+                    <input id=nmTotal"
+                           asp-for="@Model.Actual!.Total" />
+                    <br />
             </div>
         }
 
@@ -76,9 +85,10 @@
 
                     <h4>
                         ¿Quiere borrar la asignacion con información 
-                            @Model.Actual!.FechaIngreso,
-                            @Model.Actual!.FechaEntrega,
-                            @Model.Actual!.Estado,
+                            @Model.Actual!.Cantidad,
+                            @Model.Actual!.Subtotal,
+                            @Model.Actual!.Iva,
+                            @Model.Actual!.Total?
                     </h4>
                     <input type="submit"
                         value="Cancelar"
@@ -99,18 +109,21 @@
             <div class="containers_vn panel panel-default">
                 <table class="tb_data table table-striped table-bordered table-hover">
                     <tr>
-                        <th>FechaIngreso</th>
-                        <th>FechaEntrega</th>
-                        <th>Estado</th>
+                        <th>Cantidad</th>
+                        <th>SubTotal</th>
+                        <th>Iva</th>
+                        <th>Total</th>
+                        <th>Acción</th>
                     </tr>
                     @if (Model != null && Model.Lista != null)
                     {
                         foreach (var elemento in Model.Lista)
                         {
                             <tr>
-                                <td>@elemento.FechaIngreso</td>
-                                <td>@elemento.FechaEntrega</td>
-                                <td>@elemento.Estado</td>
+                                <td>@elemento.Cantidad</td>
+                                <td>@elemento.Subtotal</td>
+                                <td>@elemento.Iva</td>
+                                <td>@elemento.Total</td>
                                 <td>
                                     <input type="submit"
                                         value="Editar"

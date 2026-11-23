@@ -1,4 +1,5 @@
 ﻿using lib_Celulares.Entidades;
+using lib_Celulares.Nucleo;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,6 @@ namespace Pre_Celulares.Interfaces
         List<Usuarios> Consultar();
         List<Usuarios> Buscar(Usuarios entidad);
         Usuarios Borrar(Usuarios entidad);
+        SesionUsuario Autenticar(Usuarios entidad);
     }
 }

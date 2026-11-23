@@ -212,150 +212,250 @@ CREATE TABLE [Permisos](
     [RolId] INT NOT NULL REFERENCES [Roles] ([Id]),
     [Ventana] NVARCHAR(100) NOT NULL
 );
-
+-- 1. Personas (Agregamos 6 en total para tener 3 Clientes y 3 Trabajadores distintos)
 INSERT INTO [Personas] 
     ([Cedula], [Nombre], [Edad], [Direccion])
 VALUES
-    ('1234567890', 'Juan Perez', 25, 'Calle 10 # 20-30');
+    ('1234567890', 'Juan Perez', 25, 'Calle 10 # 20-30'),
+    ('1020304050', 'Maria Gomez', 32, 'Carrera 43A # 15-20'),
+    ('1098765432', 'Carlos Rodriguez', 40, 'Avenida El Poblado # 12-45'),
+    ('1122334455', 'Laura Martinez', 28, 'Calle 33 # 65-10'),
+    ('5566778899', 'Andres Lopez', 35, 'Carrera 70 # 44-12'),
+    ('9988776655', 'Sofia Ramirez', 29, 'Transversal 39 # 72-18');
 
-
+-- 2. Clientes (Referencian a Personas 1, 2 y 3)
 INSERT INTO [Clientes]
     ([PersonaId], [TipoCliente], [PaisResidencia], [Correo])
 VALUES
-    (1, 'Frecuente', 'Colombia', 'juan.perez@gmail.com');
+    (1, 'Frecuente', 'Colombia', 'juan.perez@gmail.com'),
+    (2, 'VIP', 'Colombia', 'maria.gomez@hotmail.com'),
+    (3, 'Nuevo', 'Colombia', 'carlos.rodriguez@outlook.com');
 
-
+-- 3. Trabajadores (Referencian a Personas 4, 5 y 6)
 INSERT INTO [Trabajadores]
     ([PersonaId], [Experiencia], [Salario], [Turno])
 VALUES
-    (1, '2 años', 2500000.00, 'Diurno');
+    (4, '2 años', 2500000.00, 'Diurno'),
+    (5, '5 años', 3200000.00, 'Mixto'),
+    (6, '3 años', 2800000.00, 'Nocturno');
 
-
+-- 4. Vendedores (Referencian a Trabajadores 1, 2 y 3)
 INSERT INTO [Vendedores]
     ([TrabajadorId], [CelularesVendidos], [MarcaEncargada])
 VALUES
-    (1, 10, 'Samsung');
+    (1, 10, 'Samsung'),
+    (2, 25, 'Apple'),
+    (3, 18, 'Xiaomi');
 
-
+-- 5. Tecnicos (Referencian a Trabajadores 1, 2 y 3)
 INSERT INTO [Tecnicos]
     ([TrabajadorId], [CelularesReparados], [Especializacion])
 VALUES
-    (1, 15, 'Reparación de celulares');
+    (1, 15, 'Reparación de pantallas y baterías'),
+    (2, 40, 'Microsoldadura y placas base'),
+    (3, 22, 'Software y recuperación de datos');
 
-
+-- 6. Marcas
 INSERT INTO [Marcas]
     ([Nombre], [Telefono], [Correo], [Direccion])
 VALUES
-    ('Samsung', '3001234567', 'contacto@samsung.com', 'Calle 50 # 40-20');
+    ('Samsung', '3001234567', 'contacto@samsung.com', 'Calle 50 # 40-20'),
+    ('Apple', '3002345678', 'soporte@apple.com', 'Carrera 11 # 82-01'),
+    ('Xiaomi', '3003456789', 'ventas@xiaomi.com', 'Avenida 19 # 100-45');
 
-
+-- 7. Componentes
 INSERT INTO [Componentes]
     ([Procesador], [MemoriaRam], [Pantalla], [Bateria], [Camara], [SistemaOperativo])
 VALUES
-    ('Snapdragon 8 Gen 2', '8 GB', '6.5 pulgadas AMOLED', '5000 mAh', '50 MP', 'Android');
+    ('Snapdragon 8 Gen 2', '8 GB', '6.5 pulgadas AMOLED', '5000 mAh', '50 MP', 'Android 14'),
+    ('Apple A17 Pro', '8 GB', '6.1 pulgadas Super Retina XDR', '3274 mAh', '48 MP', 'iOS 17'),
+    ('Dimensity 9200+', '12 GB', '6.67 pulgadas AMOLED 144Hz', '5000 mAh', '50 MP Leica', 'Android 14 (HyperOS)');
 
-
+-- 8. Celulares (Referencian a Marcas 1, 2, 3 y Componentes 1, 2, 3)
 INSERT INTO [Celulares]
     ([MarcaId], [ComponenteId], [Disponible], [CantidadDisponible], [Color], [Precio], [Modelo], [Almacenamiento])
 VALUES
-    (1, 1, 1, 20, 'Negro', 2500000.00, 'Galaxy S23', '256 GB');
+    (1, 1, 1, 20, 'Negro', 2500000.00, 'Galaxy S23', '256 GB'),
+    (2, 2, 1, 15, 'Titanio Natural', 4800000.00, 'iPhone 15 Pro', '256 GB'),
+    (3, 3, 1, 30, 'Azul', 2100000.00, 'Xiaomi 13T Pro', '512 GB');
 
-
+-- 9. Transportadoras
 INSERT INTO [Transportadoras]
     ([Nombre], [Correo], [Telefono])
 VALUES
-    ('Servientrega', 'contacto@servientrega.com', '3009876543');
+    ('Servientrega', 'contacto@servientrega.com', '3009876543'),
+    ('Coordinadora', 'envios@coordinadora.com', '3108765432'),
+    ('Inter Rapidisimo', 'soporte@interrapidisimo.com', '3207654321');
 
-
+-- 10. Proveedores
 INSERT INTO [Proveedores]
     ([Nombre], [Correo], [Telefono], [Direccion])
 VALUES
-    ('Proveedor Celulares S.A.S', 'ventas@proveedor.com', '3014567890', 'Carrera 45 # 30-15');
+    ('Proveedor Celulares S.A.S', 'ventas@proveedor.com', '3014567890', 'Carrera 45 # 30-15'),
+    ('Importadora Tech Colombia', 'comercial@importadoratech.co', '3156789012', 'Calle 80 # 25-40'),
+    ('Distribuidora Global Movil', 'pedidos@globalmovil.com', '3189012345', 'Zona Franca Bodega 12');
 
-
+-- 11. Compras (Referencian a Proveedores 1, 2, 3 y Trabajadores 1, 2, 3)
 INSERT INTO [Compras]
     ([ProveedorId], [TrabajadorId], [FechaCompra], [Total], [Estado])
 VALUES
-    (1, 1, '2026-10-01 08:00:00', 20000000.00, 'Completada');
+    (1, 1, '2026-10-01 08:00:00', 20000000.00, 'Completada'),
+    (2, 2, '2026-10-05 10:30:00', 38000000.00, 'Completada'),
+    (3, 3, '2026-10-10 14:15:00', 16000000.00, 'Pendiente');
 
-
+-- 12. DetallesCompras (Referencian a Compras 1, 2, 3 y Celulares 1, 2, 3)
 INSERT INTO [DetallesCompras]
     ([CompraId], [CelularId], [Cantidad], [PrecioCompra])
 VALUES
-    (1, 1, 10, 2000000.00);
+    (1, 1, 10, 2000000.00),
+    (2, 2, 10, 3800000.00),
+    (3, 3, 10, 1600000.00);
 
-
+-- 13. Bonos (Referencian a Tecnicos 1, 2, 3)
 INSERT INTO [Bonos]
     ([TecnicoId], [CantidadReparaciones], [ValorBono])
 VALUES
-    (1, 15, 500000.00);
+    (1, 15, 500000.00),
+    (2, 40, 1200000.00),
+    (3, 22, 700000.00);
 
-
+-- 14. Reparaciones (Referencian a Celulares, Tecnicos, Clientes y Bonos 1, 2, 3)
 INSERT INTO [Reparaciones]
-    ([CelularId], [TecnicoId], [ClienteId], [BonoId],
-     [FechaIngreso], [FechaEntrega], [Estado])
+    ([CelularId], [TecnicoId], [ClienteId], [BonoId], [FechaIngreso], [FechaEntrega], [Estado])
 VALUES
-    (1, 1, 1, 1,
-     '2026-10-01 09:00:00',
-     '2026-10-03 15:00:00',
-     'Reparado');
+    (1, 1, 1, 1, '2026-10-01 09:00:00', '2026-10-03 15:00:00', 'Reparado'),
+    (2, 2, 2, 2, '2026-10-04 11:00:00', '2026-10-06 17:00:00', 'Reparado'),
+    (3, 3, 3, 3, '2026-10-08 10:00:00', '2026-10-10 12:00:00', 'En proceso');
 
-
+-- 15. DetallesReparaciones (Referencian a Reparaciones 1, 2, 3)
 INSERT INTO [DetallesReparaciones]
-    ([ReparacionId], [Diagnostico], [ServicioRealizado],
-     [ComponenteReemplazado], [Cantidad], [Precio], [Subtotal])
+    ([ReparacionId], [Diagnostico], [ServicioRealizado], [ComponenteReemplazado], [Cantidad], [Precio], [Subtotal])
 VALUES
-    (1, 'Pantalla dañada', 'Cambio de pantalla',
-     'Pantalla AMOLED', 1, 500000.00, 500000.00);
+    (1, 'Pantalla dañada por golpe', 'Cambio de pantalla', 'Pantalla AMOLED', 1, 500000.00, 500000.00),
+    (2, 'Cortocircuito en placa', 'Reconstrucción de pistas', 'IC de carga', 1, 450000.00, 450000.00),
+    (3, 'Batería degradada', 'Reemplazo de batería', 'Batería 5000 mAh', 1, 180000.00, 180000.00);
 
-
+-- 16. Facturas (Referencian a Clientes, Trabajadores y Reparaciones 1, 2, 3)
 INSERT INTO [Facturas]
-    ([ClienteId], [TrabajadorId], [ReparacionId],
-     [Fecha], [Subtotal], [Iva], [Total])
+    ([ClienteId], [TrabajadorId], [ReparacionId], [Fecha], [Subtotal], [Iva], [Total])
 VALUES
-    (1, 1, 1,
-     '2026-10-03 16:00:00',
-     500000.00, 95000.00, 595000.00);
+    (1, 1, 1, '2026-10-03 16:00:00', 2500000.00, 475000.00, 2975000.00),
+    (2, 2, 2, '2026-10-06 18:00:00', 4800000.00, 912000.00, 5712000.00),
+    (3, 3, 3, '2026-10-10 14:00:00', 2100000.00, 399000.00, 2499000.00);
 
-
+-- 17. DetallesFacturas (Referencian a Facturas 1, 2, 3 y Celulares 1, 2, 3)
 INSERT INTO [DetallesFacturas]
-    ([FacturaId], [CelularId], [Cantidad],
-     [Subtotal], [Iva], [Total])
+    ([FacturaId], [CelularId], [Cantidad], [Subtotal], [Iva], [Total])
 VALUES
-    (1, 1, 1,
-     2500000.00, 475000.00, 2975000.00);
+    (1, 1, 1, 2500000.00, 475000.00, 2975000.00),
+    (2, 2, 1, 4800000.00, 912000.00, 5712000.00),
+    (3, 3, 1, 2100000.00, 399000.00, 2499000.00);
 
-
+-- 18. Garantias (Referencian a Celulares, Clientes y Facturas 1, 2, 3)
 INSERT INTO [Garantias]
-    ([CelularId], [ClienteId], [FacturaId],
-     [FechaInicio], [FechaVencimiento],
-     [TipoGarantia], [Estado])
+    ([CelularId], [ClienteId], [FacturaId], [FechaInicio], [FechaVencimiento], [TipoGarantia], [Estado])
 VALUES
-    (1, 1, 1,
-     '2026-10-03 16:00:00',
-     '2027-10-03 16:00:00',
-     'Garantia de fabrica',
-     'Activa');
+    (1, 1, 1, '2026-10-03 16:00:00', '2027-10-03 16:00:00', 'Garantia de fabrica', 'Activa'),
+    (2, 2, 2, '2026-10-06 18:00:00', '2027-10-06 18:00:00', 'Garantia extendida AppleCare', 'Activa'),
+    (3, 3, 3, '2026-10-10 14:00:00', '2027-10-10 14:00:00', 'Garantia de fabrica', 'Activa');
 
-
+-- 19. Envios (Referencian a Facturas, Transportadoras y Clientes 1, 2, 3)
 INSERT INTO [Envios]
-    ([FacturaId], [TransportadoraId], [ClienteId],
-     [FechaEnvio], [FechaEntrega], [CostoEnvio])
+    ([FacturaId], [TransportadoraId], [ClienteId], [FechaEnvio], [FechaEntrega], [CostoEnvio])
 VALUES
-    (1, 1, 1,
-     '2026-10-04 08:00:00',
-     '2026-10-05 14:00:00',
-     25000.00);
+    (1, 1, 1, '2026-10-04 08:00:00', '2026-10-05 14:00:00', 25000.00),
+    (2, 2, 2, '2026-10-07 09:30:00', '2026-10-08 11:00:00', 30000.00),
+    (3, 3, 3, '2026-10-11 10:00:00', '2026-10-13 16:30:00', 20000.00);
 
-
+-- 20. Devoluciones (Referencian a Facturas y Clientes 1, 2, 3)
 INSERT INTO [Devoluciones]
-    ([FacturaId], [ClienteId], [FechaDevolucion],
-     [Motivo], [ValorDevuelto])
+    ([FacturaId], [ClienteId], [FechaDevolucion], [Motivo], [ValorDevuelto])
 VALUES
-    (1, 1,
-     '2026-10-10 10:00:00',
-     'Producto defectuoso',
-     595000.00);
+    (1, 1, '2026-10-10 10:00:00', 'Defecto de fábrica en micrófono', 2975000.00),
+    (2, 2, '2026-10-12 15:20:00', 'Cliente solicitó cambio de color', 5712000.00),
+    (3, 3, '2026-10-15 09:45:00', 'Problema con carga rápida', 2499000.00);
 
+    /*
+  Script_Seguridad.sql
+  Datos de ejemplo para el login por roles: Usuarios, Roles y Permisos.
+
+  - Se puede ejecutar varias veces: no duplica nada.
+  - Los nombres de Ventana deben ser IGUALES a Ventana.Pagina de MenuVentanas.cs.
+  - Modelo actual: Roles.UsuarioId, es decir, cada usuario tiene sus propias filas
+    de Roles, y cada rol sus propias filas de Permisos. Por eso el script las crea
+    usuario por usuario.
+  - Las contraseñas se guardan tal cual (texto plano) porque asi las compara la
+    aplicacion hoy. Son solo para pruebas.
+*/
+USE tienda_celulares_db;
+GO
+
+SET NOCOUNT ON;
+
+-- Ventanas y el nivel minimo de acceso que las ve:
+--   1 = Tienda (todos)   2 = Operacion (Trabajador y Administrador)   3 = Administracion (solo Administrador)
+DECLARE @Ventanas TABLE (Ventana NVARCHAR(100) NOT NULL, Nivel INT NOT NULL);
+INSERT INTO @Ventanas (Ventana, Nivel) VALUES
+    (N'Celulares', 1),
+    (N'Marcas', 1),
+    (N'Carrito', 1),
+    (N'Facturas(Añadir DetallesFacturas)', 1),
+    (N'Garantias', 1),
+    (N'Envios', 1),
+    (N'Devoluciones', 1),
+    (N'Reparaciones(Añadir DetallesReparaciones)', 1),
+    (N'Clientes', 2),
+    (N'Componentes', 2),
+    (N'Compras(Añadir DetallesCompras)', 2),
+    (N'Proveedores', 2),
+    (N'Transportadoras', 2),
+    (N'Personas', 3),
+    (N'Trabajadores', 3),
+    (N'Vendedores', 3),
+    (N'Tecnicos', 3),
+    (N'Bonos', 3),
+    (N'Usuarios', 3);
+
+-- Cuentas de prueba (las mismas que antes estaban fijas en el codigo) y hasta que nivel ven
+DECLARE @Cuentas TABLE (
+    Usuario  NVARCHAR(30)  NOT NULL,
+    Clave    NVARCHAR(100) NOT NULL,
+    Rol      NVARCHAR(30)  NOT NULL,
+    NivelMax INT           NOT NULL);
+INSERT INTO @Cuentas (Usuario, Clave, Rol, NivelMax) VALUES
+    (N'Usuario',    N'123', N'Administrador', 3),
+    (N'Trabajador', N'123', N'Trabajador',    2),
+    (N'Cliente',    N'123', N'Cliente',       1);
+
+-- 1) Usuarios
+INSERT INTO [Usuarios] ([Nombre_Usuario], [Contraseña])
+SELECT c.Usuario, c.Clave
+FROM @Cuentas c
+WHERE NOT EXISTS (SELECT 1 FROM [Usuarios] u WHERE u.[Nombre_Usuario] = c.Usuario);
+
+-- 2) Un rol por usuario
+INSERT INTO [Roles] ([UsuarioId], [Nombre])
+SELECT u.[Id], c.Rol
+FROM @Cuentas c
+JOIN [Usuarios] u ON u.[Nombre_Usuario] = c.Usuario
+WHERE NOT EXISTS (SELECT 1 FROM [Roles] r WHERE r.[UsuarioId] = u.[Id] AND r.[Nombre] = c.Rol);
+
+-- 3) Permisos: cada rol recibe las ventanas hasta su nivel
+INSERT INTO [Permisos] ([RolId], [Ventana])
+SELECT r.[Id], v.Ventana
+FROM @Cuentas c
+JOIN [Usuarios] u ON u.[Nombre_Usuario] = c.Usuario
+JOIN [Roles] r ON r.[UsuarioId] = u.[Id] AND r.[Nombre] = c.Rol
+JOIN @Ventanas v ON v.Nivel <= c.NivelMax
+WHERE NOT EXISTS (SELECT 1 FROM [Permisos] p WHERE p.[RolId] = r.[Id] AND p.[Ventana] = v.Ventana);
+
+-- Resultado: deben salir 19 ventanas para Administrador, 13 para Trabajador y 8 para Cliente
+SELECT u.[Nombre_Usuario] AS Usuario, r.[Nombre] AS Rol, COUNT(p.[Id]) AS Ventanas
+FROM [Usuarios] u
+JOIN [Roles] r ON r.[UsuarioId] = u.[Id]
+LEFT JOIN [Permisos] p ON p.[RolId] = r.[Id]
+GROUP BY u.[Nombre_Usuario], r.[Nombre]
+ORDER BY u.[Nombre_Usuario];
+GO
 
 */

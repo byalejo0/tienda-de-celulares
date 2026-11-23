@@ -23,9 +23,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark"
                                asp-area=""
-                               asp-page="/Index">Home</a>
+                               asp-page="/Index"
+                               data-usuario="@Seguridad.Chip(Context.Session)">Home</a>
                         </li>
-                        @foreach (var grupo in MenuVentanas.GruposVisibles(Context.Session.GetString("Rol")))
+                        @foreach (var grupo in Seguridad.GruposVisibles(Context.Session))
                         {
                             <li class="nav-item smart-hub" data-label="@grupo.Titulo">
                                 <div class="hub-panel">

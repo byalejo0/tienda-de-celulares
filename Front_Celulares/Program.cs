@@ -1,3 +1,4 @@
+using Front_Celulares;
 using Pre_Celulares.Implementaciones;
 using Pre_Celulares.Interfaces;
 
@@ -49,9 +50,37 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseSession();
 app.UseAuthorization();
+
+// Cada ventana (/Ventanas/...) exige sesion iniciada y que alguno de los roles
+// del usuario tenga el Permiso (Permisos.Ventana) para esa ventana. Esto evita
+// que se entre escribiendo la direccion a mano, aunque el menu no la muestre.
+app.Use(async (context, next) =>
+{
+    const string prefijo = "/Ventanas/";
+    var ruta = context.Request.Path.Value ?? string.Empty;
+
+    if (ruta.StartsWith(prefijo, StringComparison.OrdinalIgnoreCase))
+    {
+        if (!Seguridad.EstaLogueado(context.Session))
+        {
+            context.Response.Redirect("/");
+            return;
+        }
+
+        var ventana = ruta.Substring(prefijo.Length).Split('/')[0];
+        if (!Seguridad.TieneAcceso(context.Session, ventana))
+        {
+            context.Response.Redirect("/AccesoDenegado");
+            return;
+        }
+    }
+
+    await next(context);
+});
+
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
-app.UseSession();
 app.Run();
