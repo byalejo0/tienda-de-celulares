@@ -9,6 +9,7 @@ namespace lib_Celulares.Entidades
     {
         public int Id { get; set; }
         public int UsuarioId { get; set; }
+        public string? Nombre { get; set; }
 
         [ForeignKey("UsuarioId")] public Usuarios? _Usuario {get; set; }
     }

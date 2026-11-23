@@ -4,7 +4,7 @@
     {
         public static string StringConexion()
         {
-            return "server=localhost\\DEV;database=db_horarios;Integrated Security=True;TrustServerCertificate=true;";
+            return "server=localhost\\DEV;database=tienda_celulares_db;Integrated Security=True;TrustServerCertificate=true;";
         }
     }
 }

@@ -212,15 +212,15 @@ header {
         gap: .25rem;
     }
 
-        /* --- Lista flotante "Smart Hub" (donde estaba Asignaciones) ---
-   Para cambiarle el nombre edita el texto de content en la regla ::before.
-   El enlace original de Asignaciones pasa a ser la opcion de la lista. */
-        header .navbar-nav > .nav-item:nth-child(2) {
+        /* --- Listas flotantes (Tienda / Operacion / Administracion) ---
+   Un boton por lista; el _Layout solo pinta los que el rol puede ver.
+   El titulo sale del atributo data-label de cada <li class="smart-hub">. */
+        header .navbar-nav > .smart-hub {
             position: relative;
         }
 
-            header .navbar-nav > .nav-item:nth-child(2)::before {
-                content: "Smart Hub  \25BE";
+            header .navbar-nav > .smart-hub::before {
+                content: attr(data-label) "  \25BE";
                 display: block;
                 padding: .5rem 1rem;
                 border-radius: 999px;
@@ -233,28 +233,28 @@ header {
                 transition: background .2s ease, box-shadow .2s ease;
             }
 
-            header .navbar-nav > .nav-item:nth-child(2):hover::before,
-            header .navbar-nav > .nav-item:nth-child(2):focus-within::before {
+            header .navbar-nav > .smart-hub:hover::before,
+            header .navbar-nav > .smart-hub:focus-within::before {
                 background: var(--tc-grad);
                 border-color: transparent;
                 box-shadow: 0 6px 18px rgba(124, 58, 237, .45);
             }
 
-            /* el panel flotante */
-            header .navbar-nav > .nav-item:nth-child(2) > .nav-link {
+            /* el panel flotante con las ventanas */
+            header .navbar-nav > .smart-hub > .hub-panel {
                 position: absolute;
                 top: 100%;
                 left: 0;
                 z-index: 1040;
-                min-width: 270px;
+                width: max-content;
+                min-width: 220px;
+                max-width: calc(100vw - 2rem);
                 margin-top: 10px;
-                padding: .85rem 1rem;
+                padding: .6rem;
                 display: grid;
-                grid-template-columns: auto 1fr;
-                column-gap: .8rem;
-                align-items: center;
+                grid-template-columns: 1fr;
+                gap: .2rem;
                 border-radius: 18px;
-                color: var(--tc-ink) !important;
                 background: #fff;
                 box-shadow: 0 18px 40px rgba(11, 16, 32, .35);
                 opacity: 0;
@@ -263,50 +263,40 @@ header {
                 transition: opacity .18s ease, transform .18s ease;
             }
 
-                /* icono de la opcion */
-                header .navbar-nav > .nav-item:nth-child(2) > .nav-link::before {
-                    content: "\1F4CB";
-                    grid-row: 1 / span 2;
-                    display: grid;
-                    place-items: center;
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 12px;
-                    font-size: 1.25rem;
-                    background: var(--tc-grad-cool);
-                    box-shadow: 0 6px 14px rgba(59, 130, 246, .35);
-                }
-
-                header .navbar-nav > .nav-item:nth-child(2) > .nav-link::after {
-                    content: "Horarios, lugares y turnos";
-                    grid-column: 2;
-                    font-size: .78rem;
-                    font-weight: 500;
-                    color: var(--tc-muted);
-                }
-
-            header .navbar-nav > .nav-item:nth-child(2):hover > .nav-link,
-            header .navbar-nav > .nav-item:nth-child(2):focus-within > .nav-link {
+            header .navbar-nav > .smart-hub:hover > .hub-panel,
+            header .navbar-nav > .smart-hub:focus-within > .hub-panel {
                 opacity: 1;
                 pointer-events: auto;
                 transform: translateY(0);
             }
 
+            header .navbar-nav > .smart-hub .hub-item {
+                display: block;
+                padding: .55rem .9rem;
+                border-radius: 12px;
+                font-size: .92rem;
+                font-weight: 600;
+                white-space: nowrap;
+                text-decoration: none;
+                color: var(--tc-ink);
+                transition: background .15s ease, color .15s ease;
+            }
+
+                header .navbar-nav > .smart-hub .hub-item:hover,
+                header .navbar-nav > .smart-hub .hub-item:focus {
+                    background: #f1f4ff;
+                    color: var(--tc-indigo);
+                }
+
             /* zona invisible entre el boton y el panel */
-            header .navbar-nav > .nav-item:nth-child(2):hover::after,
-            header .navbar-nav > .nav-item:nth-child(2):focus-within::after {
+            header .navbar-nav > .smart-hub:hover::after,
+            header .navbar-nav > .smart-hub:focus-within::after {
                 content: "";
                 position: absolute;
                 left: 0;
                 right: 0;
                 top: 100%;
                 height: 12px;
-            }
-
-            header .navbar-nav > .nav-item:nth-child(2) > .nav-link:hover,
-            header .navbar-nav > .nav-item:nth-child(2) > .nav-link:focus {
-                background: #f1f4ff;
-                color: var(--tc-indigo) !important;
             }
 
         /* --- Iniciar sesion: arriba a la derecha, en la esquina ---
@@ -372,10 +362,13 @@ header {
                 text-align: center;
             }
 
-        header .navbar-nav > .nav-item:nth-child(2) > .nav-link {
+        header .navbar-nav > .smart-hub > .hub-panel {
             position: static;
+            width: auto;
+            max-width: none;
             margin-top: .4rem;
             min-width: 0;
+            grid-template-columns: 1fr;
             opacity: 1;
             pointer-events: auto;
             transform: none;
@@ -383,8 +376,8 @@ header {
             background: rgba(255, 255, 255, .95);
         }
 
-        header .navbar-nav > .nav-item:nth-child(2):hover::after,
-        header .navbar-nav > .nav-item:nth-child(2):focus-within::after {
+        header .navbar-nav > .smart-hub:hover::after,
+        header .navbar-nav > .smart-hub:focus-within::after {
             content: none;
         }
 }

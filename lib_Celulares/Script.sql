@@ -191,12 +191,13 @@ CREATE TABLE [Devoluciones](
 CREATE TABLE [Usuarios](
     [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
     [Nombre_Usuario] NVARCHAR(30) NOT NULL,
-    [Nombre_Usuario] NVARCHAR(100) NOT NULL,
+    [Contraseña] NVARCHAR(100) NOT NULL
 );
 
 CREATE TABLE [Roles](
     [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
     [UsuarioId] INT NOT NULL REFERENCES [Usuarios] ([Id]),
+    [Nombre] NVARCHAR(30) NOT NULL
 );
 
 CREATE TABLE [Auditorias](
@@ -209,6 +210,7 @@ CREATE TABLE [Auditorias](
 CREATE TABLE [Permisos](
     [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
     [RolId] INT NOT NULL REFERENCES [Roles] ([Id]),
+    [Ventana] NVARCHAR(100) NOT NULL
 );
 
 INSERT INTO [Personas] 

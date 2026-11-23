@@ -21,18 +21,24 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" 
-                                asp-area="" 
-                                asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark"
                                asp-area=""
-                               asp-page="/Ventanas/Asignaciones">Asignaciones</a>
+                               asp-page="/Index">Home</a>
                         </li>
+                        @foreach (var grupo in MenuVentanas.GruposVisibles(Context.Session.GetString("Rol")))
+                        {
+                            <li class="nav-item smart-hub" data-label="@grupo.Titulo">
+                                <div class="hub-panel">
+                                    @foreach (var v in grupo.Ventanas)
+                                    {
+                                        <a class="hub-item" asp-area="" asp-page="/Ventanas/@v.Pagina">@v.Etiqueta</a>
+                                    }
+                                </div>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" 
-                                asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark"
+                               asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>

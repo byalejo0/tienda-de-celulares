@@ -67,7 +67,7 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Roles entidad)
         {
-            return entidad.UsuarioId <= 0;
+            return entidad.UsuarioId <= 0 || string.IsNullOrEmpty(entidad.Nombre);
         }
     }
 }

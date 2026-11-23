@@ -44,13 +44,15 @@ namespace Front_Celulares.Pages
                     return;
                 }
 
-                if ("Usuario.123" != Email + "." + Contraseña)
+                var rol = MenuVentanas.RolDe(Email + "." + Contraseña);
+                if (rol == null)
                 {
                     OnPostBtClean();
                     return;
                 }
                 ViewData["Logged"] = true;
                 HttpContext.Session.SetString("Usuario", Email!);
+                HttpContext.Session.SetString("Rol", rol);
                 EstaLogueado = true;
                 OnPostBtClean();
             }
