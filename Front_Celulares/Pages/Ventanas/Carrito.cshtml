@@ -1,0 +1,104 @@
+﻿@page
+@model CarritoModel
+@{
+    ViewData["Title"] = "Carrito";
+}
+<form method="post">
+
+    <div class="text-center">
+        <h1 class="display-4">Carrito</h1>
+
+        @if (ViewData.ContainsKey("Mensaje"))
+        {
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
+        }
+
+        @if (Model.FacturaGenerada.HasValue)
+        {
+            <div class="alert alert-success">
+                Compra registrada. Factura #@Model.FacturaGenerada
+                - <a asp-page="/Ventanas/Facturas(Añadir DetallesFacturas)">Ver facturas</a>
+            </div>
+        }
+
+        @if (Model.Items.Count == 0)
+        {
+            <p>El carrito esta vacio.</p>
+            <a class="btn btn-secondary" asp-page="/Ventanas/Celulares">Ir a Celulares</a>
+        }
+        else
+        {
+            <div class="containers_vn panel panel-default">
+                <table class="tb_data table table-striped table-bordered table-hover">
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Color</th>
+                        <th>Almacenamiento</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>@item.Modelo</td>
+                            <td>@item.Color</td>
+                            <td>@item.Almacenamiento</td>
+                            <td>$@item.Precio.ToString("N0")</td>
+                            <td>
+                                <input type="submit"
+                                       value="-"
+                                       class="btn btn-secondary btn-sm"
+                                       asp-page-handler="BtMenos"
+                                       asp-route-data="@item.CelularId" />
+                                @item.Cantidad
+                                <input type="submit"
+                                       value="+"
+                                       class="btn btn-secondary btn-sm"
+                                       asp-page-handler="BtMas"
+                                       asp-route-data="@item.CelularId" />
+                            </td>
+                            <td>$@item.Subtotal.ToString("N0")</td>
+                            <td>
+                                <input type="submit"
+                                       value="Quitar"
+                                       class="btn btn-secondary btn-sm"
+                                       asp-page-handler="BtQuitar"
+                                       asp-route-data="@item.CelularId" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+
+            <div>
+                <p>Subtotal: $@Model.Subtotal.ToString("N0")</p>
+                <p>IVA (19%): $@Model.Iva.ToString("N0")</p>
+                <h4>Total: $@Model.Total.ToString("N0")</h4>
+            </div>
+
+            <div>
+                <input type="number"
+                       min="1"
+                       placeholder="Id Cliente"
+                       asp-for="ClienteId" />
+                <input type="number"
+                       min="1"
+                       placeholder="Id Trabajador"
+                       asp-for="TrabajadorId" />
+            </div>
+            <br />
+            <div>
+                <input type="submit"
+                       value="Vaciar"
+                       class="btn btn-secondary"
+                       asp-page-handler="BtVaciar" />
+                <input type="submit"
+                       value="Finalizar compra"
+                       class="btn btn-primary"
+                       asp-page-handler="BtComprar" />
+            </div>
+        }
+    </div>
+</form>

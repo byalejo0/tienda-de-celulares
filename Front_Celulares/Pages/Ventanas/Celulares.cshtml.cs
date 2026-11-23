@@ -45,6 +45,52 @@ namespace Front_Celulares.Pages.Ventanas
             }
         }
 
+        public void OnPostBtAgregar(string data)
+        {
+            try
+            {
+                OnPostBtConsultar();
+                var celular = this.Lista?.FirstOrDefault(x => x.Id == Convert.ToInt32(data));
+                if (celular == null)
+                    return;
+
+                if (!celular.Disponible || celular.CantidadDisponible <= 0)
+                    throw new InvalidOperationException("Celular no disponible");
+
+                var items = CarritoSesion.Leer(HttpContext.Session);
+                var item = items.FirstOrDefault(x => x.CelularId == celular.Id);
+                if (item == null)
+                {
+                    items.Add(new ItemCarrito
+                    {
+                        CelularId = celular.Id,
+                        Modelo = celular.Modelo,
+                        Color = celular.Color,
+                        Almacenamiento = celular.Almacenamiento,
+                        Precio = celular.Precio,
+                        Cantidad = 1
+                    });
+                }
+                else
+                {
+                    if (item.Cantidad >= celular.CantidadDisponible)
+                        throw new InvalidOperationException("No hay mas unidades disponibles");
+                    item.Cantidad++;
+                }
+
+                CarritoSesion.Guardar(HttpContext.Session, items);
+                ViewData["Mensaje"] = celular.Modelo + " agregado al carrito";
+            }
+            catch (InvalidOperationException ex)
+            {
+                ViewData["Mensaje"] = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                LogConversor.Log(ex, ViewData!);
+            }
+        }
+
         public void OnPostBtNuevo()
         {
             try

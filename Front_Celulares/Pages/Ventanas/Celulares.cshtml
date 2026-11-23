@@ -170,6 +170,12 @@
                                 <td>@elemento.Almacenamiento</td>
                                 <td>
                                     <input type="submit"
+                                        value="Agregar al carrito"
+                                        class="btn btn-primary"
+                                        asp-page-handler="BtAgregar"
+                                        asp-route-data="@elemento.Id"
+                                        disabled="@(!elemento.Disponible || elemento.CantidadDisponible <= 0)"/>
+                                    <input type="submit"
                                         value="Editar"
                                         class="btn btn-secondary"
                                         asp-page-handler="BtEditar"

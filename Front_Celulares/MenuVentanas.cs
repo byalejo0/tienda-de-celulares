@@ -27,6 +27,7 @@
             [
                 new("Celulares", "Celulares"),
                 new("Marcas", "Marcas"),
+                new("Carrito", "Carrito"),
                 new("Facturas(Añadir DetallesFacturas)", "Facturas"),
                 new("Garantias", "Garantías"),
                 new("Envios", "Envíos"),
