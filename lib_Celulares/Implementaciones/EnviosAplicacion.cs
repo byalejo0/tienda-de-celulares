@@ -40,6 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Envios> Buscar(Envios entidad)
         {
             return this.IConexion.Envios!
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
                 .Where(x => entidad.FacturaId == 0 || x.FacturaId == entidad.FacturaId)
                 .ToList();
         }

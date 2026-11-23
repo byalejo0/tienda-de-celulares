@@ -1,9 +1,11 @@
-using lib_Celulares.Implementaciones;
+﻿using lib_Celulares.Implementaciones;
 using lib_Celulares.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(o => o.JsonSerializerOptions.ReferenceHandler =
+        System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
 builder.Services.AddScoped<IConexion, Conexion>();
 builder.Services.AddScoped<IAuditoriasAplicacion, AuditoriasAplicacion>();
 builder.Services.AddScoped<IBonosAplicacion, BonosAplicacion>();

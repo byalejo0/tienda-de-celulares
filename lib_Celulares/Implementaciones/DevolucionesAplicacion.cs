@@ -40,6 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Devoluciones> Buscar(Devoluciones entidad)
         {
             return this.IConexion.Devoluciones!
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
                 .Where(x => string.IsNullOrEmpty(entidad.Motivo) || x.Motivo!.Contains(entidad.Motivo!))
                 .ToList();
         }

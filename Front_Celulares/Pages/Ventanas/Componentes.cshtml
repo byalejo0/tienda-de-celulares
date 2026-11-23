@@ -28,7 +28,7 @@
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -48,7 +48,7 @@
                 <label>
                     Procesador
                 </label>
-                <input id=nmProcesador"
+                <input id="nmProcesador"
                     asp-for="@Model.Actual!.Procesador"/>
                 <br />
 
@@ -62,28 +62,28 @@
                 <label>
                     Pantalla
                 </label>
-                <input id=nmPantalla"
+                <input id="nmPantalla"
                     asp-for="@Model.Actual!.Pantalla"/>
                 <br />
 
                 <label>
                     Bateria
                 </label>
-                <input id=nmBateria"
+                <input id="nmBateria"
                     asp-for="@Model.Actual!.Bateria"/>
                 <br />
 
                 <label>
                     Camara
                 </label>
-                <input id=nmCamara"
+                <input id="nmCamara"
                        asp-for="@Model.Actual!.Camara" />
                 <br />
 
                 <label>
                     Sistema Operativo
                 </label>
-                <input id=nmSistemaOperativo"
+                <input id="nmSistemaOperativo"
                        asp-for="@Model.Actual!.SistemaOperativo" />
                 <br />
             </div>

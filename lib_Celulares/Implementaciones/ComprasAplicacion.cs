@@ -40,6 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Compras> Buscar(Compras entidad)
         {
             return this.IConexion.Compras!
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
                 .Where(x => string.IsNullOrEmpty(entidad.Estado) || x.Estado!.Contains(entidad.Estado!))
                 .ToList();
         }

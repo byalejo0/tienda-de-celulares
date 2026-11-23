@@ -9,7 +9,7 @@ namespace lib_Celulares.Entidades
     {
         public int Id { get; set; }
         public int UsuarioId { get; set; }
-        public String? Descripcion { get; set; }
+        [Column("Descripción")] public String? Descripcion { get; set; }
         public DateTime? Fecha { get; set; }
 
         [ForeignKey("UsuarioId")] public Usuarios? _Usuario { get; set; }

@@ -30,11 +30,13 @@
                 new("Celulares", "Celulares"),
                 new("Marcas", "Marcas"),
                 new("Carrito", "Carrito"),
-                new("Facturas(Añadir DetallesFacturas)", "Facturas"),
+                new("Facturas", "Facturas"),
+                new("DetallesFacturas", "Detalles de facturas"),
                 new("Garantias", "Garantías"),
                 new("Envios", "Envíos"),
                 new("Devoluciones", "Devoluciones"),
-                new("Reparaciones(Añadir DetallesReparaciones)", "Reparaciones")
+                new("Reparaciones", "Reparaciones"),
+                new("DetallesReparaciones", "Detalles de reparaciones")
             ]),
 
             // El día a día del local: clientes, inventario y abastecimiento
@@ -42,7 +44,8 @@
             [
                 new("Clientes", "Clientes"),
                 new("Componentes", "Componentes"),
-                new("Compras(Añadir DetallesCompras)", "Compras"),
+                new("Compras", "Compras"),
+                new("DetallesCompras", "Detalles de compras"),
                 new("Proveedores", "Proveedores"),
                 new("Transportadoras", "Transportadoras")
             ]),
@@ -55,7 +58,10 @@
                 new("Vendedores", "Vendedores"),
                 new("Tecnicos", "Técnicos"),
                 new("Bonos", "Bonos"),
-                new("Usuarios", "Usuarios")
+                new("Usuarios", "Usuarios"),
+                new("Roles", "Roles"),
+                new("Permisos", "Permisos"),
+                new("Auditorias", "Auditorías")
             ])
         ];
 

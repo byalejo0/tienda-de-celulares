@@ -40,7 +40,9 @@ namespace lib_Celulares.Implementaciones
         public List<Permisos> Buscar(Permisos entidad)
         {
             return this.IConexion.Permisos!
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
                 .Where(x => entidad.RolId == 0 || x.RolId == entidad.RolId)
+                .Where(x => string.IsNullOrEmpty(entidad.Ventana) || x.Ventana!.Contains(entidad.Ventana!))
                 .ToList();
         }
 

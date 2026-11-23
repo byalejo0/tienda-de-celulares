@@ -26,30 +26,8 @@ namespace Pre_Celulares.Implementaciones
             cliente_http.Dispose();
             cliente_http = null;
 
-            respuesta = Replace(respuesta);
             return JsonConvert.DeserializeObject<T>(respuesta)!;
         }
 
-        private string Replace(string resp)
-        {
-            return resp.Replace("\\\\r\\\\n", "")
-                .Replace("\\r\\n", "")
-                .Replace("\\", "")
-                .Replace("\\\"", "\"")
-                .Replace("\"", "'")
-                .Replace("'[", "[")
-                .Replace("]'", "]")
-                .Replace("'{'", "{'")
-                .Replace("\\\\", "\\")
-                .Replace("'}'", "'}")
-                .Replace("}'", "}")
-                .Replace("\\n", "")
-                .Replace("\\r", "")
-                .Replace("    ", "")
-                .Replace("'{", "{")
-                .Replace("\"", "")
-                .Replace("  ", "")
-                .Replace("null", "''");
-        }
     }
 }

@@ -41,7 +41,8 @@ namespace lib_Celulares.Implementaciones
         public List<Usuarios> Buscar(Usuarios entidad)
         {
             return this.IConexion.Usuarios!
-                .Where(x => x.Nombre_Usuario!.Contains(entidad.Nombre_Usuario!))
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
+                .Where(x => string.IsNullOrEmpty(entidad.Nombre_Usuario) || x.Nombre_Usuario!.Contains(entidad.Nombre_Usuario!))
                 .ToList();
         }
 

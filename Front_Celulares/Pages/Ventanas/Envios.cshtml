@@ -28,7 +28,7 @@
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -43,9 +43,30 @@
                 <h3>Envios</h3>
 
                 <label>
+                    Id de la Factura
+                </label>
+                <input id="nmFacturaId"
+                    asp-for="@Model.Actual!.FacturaId"/>
+                <br />
+
+                <label>
+                    Id de la Transportadora
+                </label>
+                <input id="nmTransportadoraId"
+                    asp-for="@Model.Actual!.TransportadoraId"/>
+                <br />
+
+                <label>
+                    Id del Cliente
+                </label>
+                <input id="nmClienteId"
+                    asp-for="@Model.Actual!.ClienteId"/>
+                <br />
+
+                <label>
                     FechaEnvio
                 </label>
-                <input id=nmFechaEnvio"
+                <input id="nmFechaEnvio"
                     asp-for="@Model.Actual!.FechaEnvio"/>
                 <br />
 
@@ -59,7 +80,7 @@
                 <label>
                     CostoEnvio
                 </label>
-                <input id=nmCostoEnvio"
+                <input id="nmCostoEnvio"
                     asp-for="@Model.Actual!.CostoEnvio"/>
                 <br />
             </div>

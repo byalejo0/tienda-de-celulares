@@ -1,4 +1,4 @@
-using lib_Celulares.Entidades;
+﻿using lib_Celulares.Entidades;
 using Pre_Celulares.Interfaces;
 using lib_Celulares.Nucleo;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +36,7 @@ namespace Front_Celulares.Pages.Ventanas
                     return;
                 }
 
-                Filtro!.Cantidad = Filtro!.Cantidad ?? 0;
+                
                 Lista = this.IDetallesComprasPresentacion.Buscar(Filtro!);
             }
             catch (Exception ex)

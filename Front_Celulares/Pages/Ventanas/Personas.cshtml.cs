@@ -1,4 +1,4 @@
-using lib_Celulares.Entidades;
+﻿using lib_Celulares.Entidades;
 using Pre_Celulares.Interfaces;
 using lib_Celulares.Nucleo;
 using Microsoft.AspNetCore.Mvc;

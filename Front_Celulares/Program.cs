@@ -1,4 +1,4 @@
-using Front_Celulares;
+﻿using Front_Celulares;
 using Pre_Celulares.Implementaciones;
 using Pre_Celulares.Interfaces;
 
@@ -78,6 +78,37 @@ app.Use(async (context, next) =>
     }
 
     await next(context);
+});
+
+// Auditoria: cada Guardar / Borrar / Comprar hecho en una ventana queda en la
+// tabla Auditorias con el usuario, la ventana y la fecha.
+app.Use(async (context, next) =>
+{
+    await next(context);
+
+    const string prefijo = "/Ventanas/";
+    var ruta = context.Request.Path.Value ?? string.Empty;
+    if (!HttpMethods.IsPost(context.Request.Method) ||
+        !ruta.StartsWith(prefijo, StringComparison.OrdinalIgnoreCase))
+        return;
+
+    var ventana = ruta.Substring(prefijo.Length).Split('/')[0];
+    if (string.Equals(ventana, "Auditorias", StringComparison.OrdinalIgnoreCase))
+        return;
+
+    var accion = (string?)context.Request.Query["handler"] switch
+    {
+        "BtGuardar" => "Guardó cambios en",
+        "BtBorrar" => "Borró un registro en",
+        "BtComprar" => "Finalizó una compra en",
+        _ => null
+    };
+    if (accion == null)
+        return;
+
+    var usuarioId = Seguridad.UsuarioId(context.Session);
+    var auditorias = context.RequestServices.GetRequiredService<IAuditoriasPresentacion>();
+    RegistroAuditoria.Registrar(auditorias, usuarioId, $"{accion} {ventana}");
 });
 
 app.MapStaticAssets();

@@ -40,6 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Trabajadores> Buscar(Trabajadores entidad)
         {
             return this.IConexion.Trabajadores!
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
                 .Where(x => string.IsNullOrEmpty(entidad.Experiencia) || x.Experiencia!.Contains(entidad.Experiencia!))
                 .ToList();
         }

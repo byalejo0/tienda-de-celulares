@@ -40,7 +40,8 @@ namespace lib_Celulares.Implementaciones
         public List<Transportadoras> Buscar(Transportadoras entidad)
         {
             return this.IConexion.Transportadoras!
-                .Where(x => x.Nombre!.Contains(entidad.Nombre!))
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
+                .Where(x => string.IsNullOrEmpty(entidad.Nombre) || x.Nombre!.Contains(entidad.Nombre!))
                 .ToList();
         }
 

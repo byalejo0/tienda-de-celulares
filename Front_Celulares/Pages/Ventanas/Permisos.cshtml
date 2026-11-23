@@ -28,7 +28,7 @@
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -43,9 +43,16 @@
                 <h3>Permisos</h3>
 
                 <label>
+                    Id del Rol
+                </label>
+                <input id="nmRolId"
+                    asp-for="@Model.Actual!.RolId"/>
+                <br />
+
+                <label>
                     Ventana
                 </label>
-                <input id=nmVentana"
+                <input id="nmVentana"
                     asp-for="@Model.Actual!.Ventana"/>
                 <br />
 

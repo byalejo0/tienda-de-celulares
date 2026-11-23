@@ -22,13 +22,13 @@
                 class="btn btn-secondary"
                 asp-page-handler="BtGuardar"/>
             <input id="flCantidad" 
-                placeholder="Cantidad"
-                asp-for="@Model.Filtro!.Cantidad"/>
+                placeholder="Id de la Compra"
+                asp-for="@Model.Filtro!.CompraId"/>
         </div>
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -43,16 +43,30 @@
                 <h3>DetallesCompras</h3>
 
                 <label>
+                    Id de la Compra
+                </label>
+                <input id="nmCompraId"
+                    asp-for="@Model.Actual!.CompraId"/>
+                <br />
+
+                <label>
+                    Id del Celular
+                </label>
+                <input id="nmCelularId"
+                    asp-for="@Model.Actual!.CelularId"/>
+                <br />
+
+                <label>
                     Cantidad
                 </label>
-                <input id=nmCantidad"
+                <input id="nmCantidad"
                     asp-for="@Model.Actual!.Cantidad"/>
                 <br />
 
                 <label>
                     Precio Compra
                 </label>
-                <input id=nmPrecioCompra"
+                <input id="nmPrecioCompra"
                     asp-for="@Model.Actual!.PrecioCompra"/>
                 <br />
             </div>

@@ -28,7 +28,7 @@
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -43,9 +43,23 @@
                 <h3>Devoluciones</h3>
 
                 <label>
+                    Id de la Factura
+                </label>
+                <input id="nmFacturaId"
+                    asp-for="@Model.Actual!.FacturaId"/>
+                <br />
+
+                <label>
+                    Id del Cliente
+                </label>
+                <input id="nmClienteId"
+                    asp-for="@Model.Actual!.ClienteId"/>
+                <br />
+
+                <label>
                     FechaDevolucion
                 </label>
-                <input id=nmFechaDevolucion"
+                <input id="nmFechaDevolucion"
                     asp-for="@Model.Actual!.FechaDevolucion"/>
                 <br />
 
@@ -59,7 +73,7 @@
                 <label>
                     ValorDevuelto
                 </label>
-                <input id=nmValorDevuelto"
+                <input id="nmValorDevuelto"
                     asp-for="@Model.Actual!.ValorDevuelto"/>
                 <br />
             </div>

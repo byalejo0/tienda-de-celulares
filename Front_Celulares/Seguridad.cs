@@ -9,6 +9,7 @@ namespace Front_Celulares
     public static class Seguridad
     {
         private const string LlaveUsuario = "Usuario";
+        private const string LlaveUsuarioId = "UsuarioId";
         private const string LlaveRol = "Rol";
         private const string LlaveRoles = "Roles";
         private const string LlaveVentanas = "Ventanas";
@@ -17,6 +18,7 @@ namespace Front_Celulares
         {
             session.Clear();
             session.SetString(LlaveUsuario, sesion.Nombre_Usuario ?? string.Empty);
+            session.SetInt32(LlaveUsuarioId, sesion.Id);
             session.SetString(LlaveRol, MenuVentanas.RolPrincipal(sesion.Roles));
             session.SetString(LlaveRoles, JsonSerializer.Serialize(sesion.Roles));
             session.SetString(LlaveVentanas, JsonSerializer.Serialize(sesion.Ventanas));
@@ -27,6 +29,9 @@ namespace Front_Celulares
 
         public static string? Nombre(ISession session)
             => session.GetString(LlaveUsuario);
+
+        public static int UsuarioId(ISession session)
+            => session.GetInt32(LlaveUsuarioId) ?? 0;
 
         // Rol principal: el que decide la interfaz de inicio.
         public static string? Rol(ISession session)

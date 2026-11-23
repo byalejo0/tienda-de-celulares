@@ -28,7 +28,7 @@
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -43,16 +43,29 @@
                 <h3>Celulares</h3>
 
                 <label>
-                    Logo
+                    Id de la Marca
+                </label>
+                <input id="nmMarcaId"
+                    asp-for="@Model.Actual!.MarcaId"/>
+                <br />
+
+                <label>
+                    Id del Componente
+                </label>
+                <input id="nmComponenteId"
+                    asp-for="@Model.Actual!.ComponenteId"/>
+                <br />
+
+                <input type="hidden" asp-for="@Model.Actual!.Imagen" />
+
+                <label>
+                    Imagen
                 </label>
                 @if (Model.Actual!.Imagen != null)
                 {
                     <img height="100"
                          width="100"
-                         src="data:image;base64,
-                    @System.Convert.ToBase64String(
-                     Convert.FromBase64String(
-                      Model.Actual!.Imagen))" />
+                         src="data:image/png;base64,@Model.Actual!.Imagen" />
                 }
                 <input type="file"
                        asp-for="FormFile" />
@@ -60,7 +73,7 @@
                 <label>
                     Modelo
                 </label>
-                <input id=nmModelo"
+                <input id="nmModelo"
                     asp-for="@Model.Actual!.Modelo"/>
                 <br />
 
@@ -74,21 +87,21 @@
                 <label>
                     CantidadDisponible
                 </label>
-                <input id=nmCantidadDisponible"
+                <input id="nmCantidadDisponible"
                     asp-for="@Model.Actual!.CantidadDisponible"/>
                 <br />
 
                 <label>
                     Color
                 </label>
-                <input id=nmColor"
+                <input id="nmColor"
                     asp-for="@Model.Actual!.Color"/>
                 <br />
 
                 <label>
-                    ¨Precio
+                    Precio
                 </label>
-                <input id=nmPrecio"
+                <input id="nmPrecio"
                     asp-for="@Model.Actual!.Precio"/>
                 <br />
 
@@ -96,7 +109,7 @@
                 <label>
                 Almacenamiento
                 </label>
-                <input id=nmAlmacenamiento"
+                <input id="nmAlmacenamiento"
                    asp-for="@Model.Actual!.Almacenamiento"/>
                 <br />
             </div>

@@ -22,13 +22,13 @@
                 class="btn btn-secondary"
                 asp-page-handler="BtGuardar"/>
             <input id="flCantidad" 
-                placeholder="Cantidad"
-                asp-for="@Model.Filtro!.Cantidad"/>
+                placeholder="Id"
+                asp-for="@Model.Filtro!.Id"/>
         </div>
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -43,44 +43,51 @@
                 <h3>DetallesReparaciones</h3>
 
                 <label>
+                    Id de la Reparacion
+                </label>
+                <input id="nmReparacionId"
+                    asp-for="@Model.Actual!.ReparacionId"/>
+                <br />
+
+                <label>
                     Diagnostico
                 </label>
-                <input id=nmDiagnostico"
+                <input id="nmDiagnostico"
                     asp-for="@Model.Actual!.Diagnostico"/>
                 <br />
 
                 <label>
                     Servicio Realizado
                 </label>
-                <input id=nmServicioRealizado"
+                <input id="nmServicioRealizado"
                     asp-for="@Model.Actual!.ServicioRealizado"/>
                 <br />
 
                 <label>
                     Componente Reemplazado
                 </label>
-                <input id=nmComponenteReemplazado"
+                <input id="nmComponenteReemplazado"
                        asp-for="@Model.Actual!.ComponenteReemplazado" />
                 <br />
 
                 <label>
                     Cantidad
                 </label>
-                <input id=nmCantidad"
+                <input id="nmCantidad"
                        asp-for="@Model.Actual!.Cantidad" />
                 <br />
 
                 <label>
                     Precio
                 </label>
-                <input id=nmPrecio"
+                <input id="nmPrecio"
                        asp-for="@Model.Actual!.Precio" />
                 <br />
 
                 <label>
                     Subtotal
                 </label>
-                <input id=nmSubtotal"
+                <input id="nmSubtotal"
                        asp-for="@Model.Actual!.Subtotal" />
                 <br />
             </div>

@@ -40,6 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<DetallesReparaciones> Buscar(DetallesReparaciones entidad)
         {
             return this.IConexion.DetallesReparaciones!
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
                 .Where(x => string.IsNullOrEmpty(entidad.Diagnostico) || x.Diagnostico!.Contains(entidad.Diagnostico!))
                 .ToList();
         }

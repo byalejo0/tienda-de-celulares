@@ -40,7 +40,8 @@ namespace lib_Celulares.Implementaciones
         public List<Celulares> Buscar(Celulares entidad)
         {
             return this.IConexion.Celulares!
-                .Where(x => x.Modelo!.Contains(entidad.Modelo!))
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
+                .Where(x => string.IsNullOrEmpty(entidad.Modelo) || x.Modelo!.Contains(entidad.Modelo!))
                 .ToList();
         }
 

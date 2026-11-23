@@ -28,7 +28,7 @@
 
         @if (ViewData.ContainsKey("Mensaje"))
         {
-            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml");
+            @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
         }
         
         @if (Model.Formulario || Model.Borrar)
@@ -43,16 +43,23 @@
                 <h3>Auditorias</h3>
 
                 <label>
+                    Id del Usuario
+                </label>
+                <input id="nmUsuarioId"
+                    asp-for="@Model.Actual!.UsuarioId"/>
+                <br />
+
+                <label>
                     Descripcion
                 </label>
-                <input id=nmDescripcion"
+                <input id="nmDescripcion"
                     asp-for="@Model.Actual!.Descripcion"/>
                 <br />
 
                 <label>
                     Fecha
                 </label>
-                <input id=nmFecha"
+                <input id="nmFecha"
                     asp-for="@Model.Actual!.Fecha"/>
                 <br />
             </div>

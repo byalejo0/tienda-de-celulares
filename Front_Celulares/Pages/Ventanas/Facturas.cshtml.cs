@@ -1,4 +1,4 @@
-using lib_Celulares.Entidades;
+﻿using lib_Celulares.Entidades;
 using Pre_Celulares.Interfaces;
 using lib_Celulares.Nucleo;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +36,6 @@ namespace Front_Celulares.Pages.Ventanas
                     return;
                 }
 
-                Filtro!.Id = Filtro!.Id;
                 Lista = this.IFacturasPresentacion.Buscar(Filtro!);
             }
             catch (Exception ex)

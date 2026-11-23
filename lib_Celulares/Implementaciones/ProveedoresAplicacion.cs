@@ -40,7 +40,8 @@ namespace lib_Celulares.Implementaciones
         public List<Proveedores> Buscar(Proveedores entidad)
         {
             return this.IConexion.Proveedores!
-                .Where(x => x.Nombre!.Contains(entidad.Nombre!))
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
+                .Where(x => string.IsNullOrEmpty(entidad.Nombre) || x.Nombre!.Contains(entidad.Nombre!))
                 .ToList();
         }
 

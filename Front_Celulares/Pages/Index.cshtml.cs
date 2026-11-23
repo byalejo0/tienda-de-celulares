@@ -9,10 +9,13 @@ namespace Front_Celulares.Pages
     public class IndexModel : PageModel
     {
         private readonly IUsuariosPresentacion IUsuariosPresentacion;
+        private readonly IAuditoriasPresentacion IAuditoriasPresentacion;
 
-        public IndexModel(IUsuariosPresentacion iUsuariosPresentacion)
+        public IndexModel(IUsuariosPresentacion iUsuariosPresentacion,
+            IAuditoriasPresentacion iAuditoriasPresentacion)
         {
             this.IUsuariosPresentacion = iUsuariosPresentacion;
+            this.IAuditoriasPresentacion = iAuditoriasPresentacion;
         }
 
         public bool EstaLogueado = false;
@@ -93,6 +96,8 @@ namespace Front_Celulares.Pages
                 }
 
                 Seguridad.Iniciar(HttpContext.Session, sesion);
+                RegistroAuditoria.Registrar(this.IAuditoriasPresentacion, sesion.Id,
+                    $"Inicio de sesión ({Seguridad.Rol(HttpContext.Session)})");
                 OnPostBtClean();
                 CargarSesion();
             }
@@ -107,6 +112,8 @@ namespace Front_Celulares.Pages
         {
             try
             {
+                RegistroAuditoria.Registrar(this.IAuditoriasPresentacion,
+                    Seguridad.UsuarioId(HttpContext.Session), "Cierre de sesión");
                 HttpContext.Session.Clear();
                 HttpContext.Response.Redirect("/");
                 EstaLogueado = false;

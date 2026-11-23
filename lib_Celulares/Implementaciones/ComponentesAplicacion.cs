@@ -40,6 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Componentes> Buscar(Componentes entidad)
         {
             return this.IConexion.Componentes!
+                .Where(x => entidad.Id == 0 || x.Id == entidad.Id)
                 .Where(x => string.IsNullOrEmpty(entidad.Procesador) || x.Procesador!.Contains(entidad.Procesador!))
                 .ToList();
         }
