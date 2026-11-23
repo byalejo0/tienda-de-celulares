@@ -36,7 +36,7 @@ namespace Front_Celulares.Pages.Ventanas
                     return;
                 }
 
-                Filtro!.ValorBono = Filtro!.ValorBono;
+                Filtro!.Id = Filtro!.Id;
                 Lista = this.IBonosPresentacion.Buscar(Filtro!);
             }
             catch (Exception ex)

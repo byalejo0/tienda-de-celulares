@@ -40,8 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Vendedores> Buscar(Vendedores entidad)
         {
             return this.IConexion.Vendedores!
-                .Include(x => x._Trabajador)
-                .Where(x => x.MarcaEncargada!.Contains(entidad.MarcaEncargada!))
+                .Where(x => string.IsNullOrEmpty(entidad.MarcaEncargada) || x.MarcaEncargada!.Contains(entidad.MarcaEncargada!))
                 .ToList();
         }
 

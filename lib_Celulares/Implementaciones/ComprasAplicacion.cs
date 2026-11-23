@@ -40,9 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Compras> Buscar(Compras entidad)
         {
             return this.IConexion.Compras!
-                .Include(x => x._Proveedor)
-                .Include(x => x._Trabajador)
-                .Where(x => x.Estado!.Contains(entidad.Estado!))
+                .Where(x => string.IsNullOrEmpty(entidad.Estado) || x.Estado!.Contains(entidad.Estado!))
                 .ToList();
         }
 

@@ -21,9 +21,9 @@
                 value="Guardar"
                 class="btn btn-secondary"
                 asp-page-handler="BtGuardar"/>
-            <input id="flCorreo" 
-                placeholder="Correo"
-                asp-for="@Model.Filtro!.Correo"/>
+            <input id="flId" 
+                placeholder="Id"
+                asp-for="@Model.Filtro!.Id"/>
         </div>
 
         @if (ViewData.ContainsKey("Mensaje"))
@@ -41,15 +41,6 @@
         {
             <div>
                 <h3>Clientes</h3>
-
-                <label>
-                    Nombre
-                </label>
-                <select id="nmNombre"
-                    asp-for="@Model.Actual!.PersonaId"
-                    asp-items="@(new SelectList(Model.Personas, "Id", "Nombre"))">
-                </select>
-                <br />
 
                 <label>
                     Tipo Cliente
@@ -83,8 +74,7 @@
                     </h3>
 
                     <h4>
-                        ¿Quiere borrar la asignacion con información
-                            @Model.Actual!.PersonaId,
+                        ¿Quiere borrar la asignacion con información 
                             @Model.Actual!.TipoCliente,
                             @Model.Actual!.PaisResidencia,
                             @Model.Actual!.Correo?
@@ -109,7 +99,6 @@
             <div class="containers_vn panel panel-default">
                 <table class="tb_data table table-striped table-bordered table-hover">
                     <tr>
-                        <th>Nombre</th>
                         <th>TipoCliente</th>
                         <th>PaisResidencia</th>
                         <th>Correo</th>
@@ -120,7 +109,6 @@
                         foreach (var elemento in Model.Lista)
                         {
                             <tr>
-                                <td>@elemento._Persona!.Nombre</td>
                                 <td>@elemento.TipoCliente</td>
                                 <td>@elemento.PaisResidencia</td>
                                 <td>@elemento.Correo</td>

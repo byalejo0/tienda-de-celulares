@@ -40,7 +40,6 @@ namespace lib_Celulares.Implementaciones
         public List<Clientes> Buscar(Clientes entidad)
         {
             return this.IConexion.Clientes!
-                .Include(x => x._Persona)
                 .Where(x => x.Correo!.Contains(entidad.Correo!))
                 .ToList();
         }

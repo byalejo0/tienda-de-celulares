@@ -40,8 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<DetallesReparaciones> Buscar(DetallesReparaciones entidad)
         {
             return this.IConexion.DetallesReparaciones!
-                .Include(x => x._Reparacion)
-                .Where(x => x.Diagnostico!.Contains(entidad.Diagnostico!))
+                .Where(x => string.IsNullOrEmpty(entidad.Diagnostico) || x.Diagnostico!.Contains(entidad.Diagnostico!))
                 .ToList();
         }
 

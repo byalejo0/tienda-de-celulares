@@ -40,10 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Garantias> Buscar(Garantias entidad)
         {
             return this.IConexion.Garantias!
-                .Include(x => x._Celular)
-                .Include(x => x._Cliente)
-                .Include(x => x._Factura)
-                .Where(x => x.TipoGarantia!.Contains(entidad.TipoGarantia!))
+                .Where(x => string.IsNullOrEmpty(entidad.TipoGarantia) || x.TipoGarantia!.Contains(entidad.TipoGarantia!))
                 .ToList();
         }
 

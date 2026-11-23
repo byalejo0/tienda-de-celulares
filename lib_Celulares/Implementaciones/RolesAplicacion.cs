@@ -40,8 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Roles> Buscar(Roles entidad)
         {
             return this.IConexion.Roles!
-                .Include(x => x._Usuario)
-                .Where(x => x.UsuarioId == entidad.UsuarioId)
+                .Where(x => entidad.UsuarioId == 0 || x.UsuarioId == entidad.UsuarioId)
                 .ToList();
         }
 

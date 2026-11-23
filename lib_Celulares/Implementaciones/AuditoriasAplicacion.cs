@@ -41,7 +41,7 @@ namespace lib_Celulares.Implementaciones
         {
             return this.IConexion.Auditorias!
                 .Include(x => x._Usuario)
-                .Where(x => x.Descripcion!.Contains(entidad.Descripcion!))
+                .Where(x => string.IsNullOrEmpty(entidad.Descripcion) || x.Descripcion!.Contains(entidad.Descripcion!))
                 .ToList();
         }
 

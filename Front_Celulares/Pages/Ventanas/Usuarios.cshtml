@@ -21,9 +21,9 @@
                 value="Guardar"
                 class="btn btn-secondary"
                 asp-page-handler="BtGuardar"/>
-            <input id="flNombre_Usuario" 
-                placeholder="Nombre Usuario"
-                asp-for="@Model.Filtro!.Nombre_Usuario"/>
+            <input id="flId" 
+                placeholder="Id"
+                asp-for="@Model.Filtro!.Id"/>
         </div>
 
         @if (ViewData.ContainsKey("Mensaje"))

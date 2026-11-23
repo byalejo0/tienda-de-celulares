@@ -40,8 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<Tecnicos> Buscar(Tecnicos entidad)
         {
             return this.IConexion.Tecnicos!
-                .Include(x => x._Trabajador)
-                .Where(x => x.Especializacion!.Contains(entidad.Especializacion!))
+                .Where(x => string.IsNullOrEmpty(entidad.Especializacion) || x.Especializacion!.Contains(entidad.Especializacion!))
                 .ToList();
         }
 

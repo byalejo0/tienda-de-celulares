@@ -41,7 +41,7 @@ namespace lib_Celulares.Implementaciones
         {
             return this.IConexion.Bonos!
                 .Include(x => x._Tecnico)
-                .Where(x => x.TecnicoId == entidad.TecnicoId)
+                .Where(x => entidad.TecnicoId == 0 || x.TecnicoId == entidad.TecnicoId)
                 .ToList();
         }
 

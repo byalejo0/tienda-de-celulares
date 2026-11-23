@@ -40,9 +40,7 @@ namespace lib_Celulares.Implementaciones
         public List<DetallesCompras> Buscar(DetallesCompras entidad)
         {
             return this.IConexion.DetallesCompras!
-                .Include(x => x._Compra)
-                .Include(x => x._Celular)
-                .Where(x => x.CompraId == entidad.CompraId)
+                .Where(x => entidad.CompraId == 0 || x.CompraId == entidad.CompraId)
                 .ToList();
         }
 
