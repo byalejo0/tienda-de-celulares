@@ -10,7 +10,7 @@ namespace lib_Celulares.Entidades
         public int Id { get; set; }
         public int CompraId { get; set; }
         public int CelularId { get; set; }
-        public int Cantidad { get; set; }
+        public int? Cantidad { get; set; }
         public decimal PrecioCompra { get; set; }
 
         [ForeignKey("CompraId")] public Compras? _Compra { get; set; }

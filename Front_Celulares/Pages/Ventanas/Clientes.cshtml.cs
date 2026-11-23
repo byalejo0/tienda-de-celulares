@@ -9,14 +9,17 @@ namespace Front_Celulares.Pages.Ventanas
     public class ClientesModel : PageModel
     {
         private IClientesPresentacion IClientesPresentacion;
+        private IPersonasPresentacion IPersonasPresentacion;
 
-        public ClientesModel(IClientesPresentacion IClientesPresentacion)
+        public ClientesModel(IPersonasPresentacion IPersonasPresentacion, IClientesPresentacion IClientesPresentacion)
         {
+            this.IPersonasPresentacion = IPersonasPresentacion;
             this.IClientesPresentacion = IClientesPresentacion;
             this.Filtro = new Clientes();
         }
 
         public IFormFile? FormFile { get; set; }
+        [BindProperty] public List<Personas> Personas { get; set; }
         [BindProperty] public List<Clientes> Lista { get; set; }
         [BindProperty] public Clientes? Filtro { get; set; }
         [BindProperty] public Clientes? Actual { get; set; }
@@ -36,7 +39,7 @@ namespace Front_Celulares.Pages.Ventanas
                     return;
                 }
 
-                Filtro!.Id = Filtro!.Id;
+                Filtro!.Correo = Filtro!.Correo ?? "";
                 Lista = this.IClientesPresentacion.Buscar(Filtro!);
             }
             catch (Exception ex)
@@ -51,6 +54,7 @@ namespace Front_Celulares.Pages.Ventanas
             {
                 Formulario = true;
                 this.Actual = new Clientes();
+                this.Personas = this.IPersonasPresentacion.Consultar();
             }
             catch (Exception ex)
             {
@@ -85,6 +89,7 @@ namespace Front_Celulares.Pages.Ventanas
                 Formulario = true;
                 OnPostBtConsultar();
                 this.Actual = this.Lista.FirstOrDefault(x => x.Id == Convert.ToInt32(data));
+                this.Personas = this.IPersonasPresentacion.Consultar();
             }
             catch (Exception ex)
             {

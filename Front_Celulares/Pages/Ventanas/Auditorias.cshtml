@@ -1,13 +1,13 @@
 ﻿@page
-@model FacturasModel
+@model AuditoriasModel
 @{
-    ViewData["Title"] = "Facturas";
+    ViewData["Title"] = "Auditorias";
 }
 <form method="post"
     enctype="multipart/form-data">
 
     <div class="text-center">
-        <h1 class="display-4">Facturas</h1>
+        <h1 class="display-4">Auditorias</h1>
         <div>
             <input type="submit"
                 value="Consultar"
@@ -21,9 +21,9 @@
                 value="Guardar"
                 class="btn btn-secondary"
                 asp-page-handler="BtGuardar"/>
-            <input id="flId" 
-                placeholder="Id"
-                asp-for="@Model.Filtro!.Id"/>
+            <input id="flFecha"
+                placeholder="Fecha"
+                asp-for="@Model.Filtro!.Fecha"/>
         </div>
 
         @if (ViewData.ContainsKey("Mensaje"))
@@ -40,34 +40,20 @@
         @if (Model.Formulario)
         {
             <div>
-                <h3>Facturas</h3>
+                <h3>Auditorias</h3>
+
+                <label>
+                    Descripcion
+                </label>
+                <input id=nmDescripcion"
+                    asp-for="@Model.Actual!.Descripcion"/>
+                <br />
 
                 <label>
                     Fecha
                 </label>
                 <input id=nmFecha"
                     asp-for="@Model.Actual!.Fecha"/>
-                <br />
-
-                <label>
-                    SubTotal
-                </label>
-                <input id="nmSubtotal"
-                    asp-for="@Model.Actual!.Subtotal"/>
-                <br />
-
-                <label>
-                    Iva
-                </label>
-                <input id=nmIva"
-                    asp-for="@Model.Actual!.Iva"/>
-                <br />
-
-                <label>
-                    Total
-                </label>
-                <input id=nmTotal"
-                    asp-for="@Model.Actual!.Total"/>
                 <br />
             </div>
         }
@@ -82,10 +68,8 @@
 
                     <h4>
                         ¿Quiere borrar la asignacion con información 
-                            @Model.Actual!.Fecha,
-                            @Model.Actual!.Subtotal,
-                            @Model.Actual!.Iva,
-                            @Model.Actual!.Total?
+                            @Model.Actual!.Descripcion,
+                            @Model.Actual!.Fecha?
                     </h4>
                     <input type="submit"
                         value="Cancelar"
@@ -106,20 +90,17 @@
             <div class="containers_vn panel panel-default">
                 <table class="tb_data table table-striped table-bordered table-hover">
                     <tr>
+                        <th>Descripcion</th>
                         <th>Fecha</th>
-                        <th>SubTotal</th>
-                        <th>Iva</th>
-                        <th>Total</th>
+                        <th>Acción</th>
                     </tr>
                     @if (Model != null && Model.Lista != null)
                     {
                         foreach (var elemento in Model.Lista)
                         {
                             <tr>
+                                <td>@elemento.Descripcion</td>
                                 <td>@elemento.Fecha</td>
-                                <td>@elemento.Subtotal</td>
-                                <td>@elemento.Iva</td>
-                                <td>@elemento.Total</td>
                                 <td>
                                     <input type="submit"
                                         value="Editar"

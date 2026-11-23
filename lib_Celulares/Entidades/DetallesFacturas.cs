@@ -13,7 +13,7 @@ namespace lib_Celulares.Entidades
         public int Cantidad { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Iva { get; set; }
-        public decimal Total { get; set; }
+        public decimal? Total { get; set; }
 
         [ForeignKey("FacturaId")] public Facturas? _Factura { get; set; }
         [ForeignKey("CelularId")] public Celulares? _Celular { get; set; }
