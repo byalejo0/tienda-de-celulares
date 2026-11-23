@@ -67,14 +67,12 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(DetallesReparaciones entidad)
         {
-            return entidad.ReparacionId <= 0 ||
-                string.IsNullOrEmpty(entidad.Diagnostico) ||
-                entidad.Diagnostico.Length > 200 ||
+            return string.IsNullOrEmpty(entidad.Diagnostico) ||
                 string.IsNullOrEmpty(entidad.ServicioRealizado) ||
-                entidad.ServicioRealizado.Length > 200 ||
                 string.IsNullOrEmpty(entidad.ComponenteReemplazado) ||
-                entidad.ComponenteReemplazado.Length > 100 ||
-                entidad.Cantidad <= 0;
+                entidad.Cantidad < 0 ||
+                entidad.Precio <= 0 ||
+                entidad.Subtotal <= 0;
         }
     }
 }

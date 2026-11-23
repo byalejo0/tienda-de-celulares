@@ -67,9 +67,8 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Vendedores entidad)
         {
-            return entidad.TrabajadorId <= 0 ||
-                string.IsNullOrEmpty(entidad.MarcaEncargada) ||
-                entidad.MarcaEncargada.Length > 50;
+            return string.IsNullOrEmpty(entidad.MarcaEncargada) ||
+                entidad.CelularesVendidos < 0;
         }
     }
 }

@@ -73,15 +73,13 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Reparaciones entidad)
         {
-            return entidad.CelularId <= 0 ||
-                entidad.TecnicoId <= 0 ||
-                entidad.ClienteId <= 0 ||
-                entidad.FechaIngreso == null ||
-                entidad.FechaIngreso < new DateTime(1753, 1, 1) ||
-                entidad.FechaEntrega == null ||
-                entidad.FechaEntrega < new DateTime(1753, 1, 1) ||
-                string.IsNullOrEmpty(entidad.Estado) ||
-                entidad.Estado.Length > 50;
+            return string.IsNullOrEmpty(entidad.Estado) ||
+                    entidad.FechaIngreso == null ||
+                    entidad.FechaIngreso == DateTime.MinValue ||
+                    entidad.FechaIngreso > DateTime.Now ||
+
+                     entidad.FechaEntrega == null ||
+                     entidad.FechaEntrega == DateTime.MinValue;
         }
     }
 }

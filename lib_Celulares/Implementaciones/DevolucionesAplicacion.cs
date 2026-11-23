@@ -69,12 +69,11 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Devoluciones entidad)
         {
-            return entidad.FacturaId <= 0 ||
-                entidad.ClienteId <= 0 ||
+            return string.IsNullOrEmpty(entidad.Motivo) ||
+                entidad.ValorDevuelto <= 0 ||
                 entidad.FechaDevolucion == null ||
-                entidad.FechaDevolucion < new DateTime(1753, 1, 1) ||
-                string.IsNullOrEmpty(entidad.Motivo) ||
-                entidad.Motivo.Length > 200;
+                entidad.FechaDevolucion == DateTime.MinValue ||
+                entidad.FechaDevolucion > DateTime.Now;
         }
     }
 }

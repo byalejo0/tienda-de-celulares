@@ -69,14 +69,11 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Celulares entidad)
         {
-            return entidad.MarcaId <= 0 ||
-                entidad.ComponenteId <= 0 ||
-                string.IsNullOrEmpty(entidad.Color) ||
-                entidad.Color.Length > 50 ||
+            return string.IsNullOrEmpty(entidad.Color) ||
                 string.IsNullOrEmpty(entidad.Modelo) ||
-                entidad.Modelo.Length > 100 ||
                 string.IsNullOrEmpty(entidad.Almacenamiento) ||
-                entidad.Almacenamiento.Length > 50;
+                entidad.CantidadDisponible < 0 ||
+                entidad.Precio <= 0;
         }
     }
 }

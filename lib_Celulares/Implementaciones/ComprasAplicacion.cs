@@ -69,12 +69,11 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Compras entidad)
         {
-            return entidad.ProveedorId <= 0 ||
-                entidad.TrabajadorId <= 0 ||
+            return string.IsNullOrEmpty(entidad.Estado) ||
+                entidad.Total <= 0 ||
                 entidad.FechaCompra == null ||
-                entidad.FechaCompra < new DateTime(1753, 1, 1) ||
-                string.IsNullOrEmpty(entidad.Estado) ||
-                entidad.Estado.Length > 50;
+                entidad.FechaCompra == DateTime.MinValue ||
+                entidad.FechaCompra > DateTime.Now;
         }
     }
 }

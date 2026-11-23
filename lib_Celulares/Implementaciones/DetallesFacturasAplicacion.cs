@@ -69,9 +69,10 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(DetallesFacturas entidad)
         {
-            return entidad.FacturaId <= 0 ||
-                entidad.CelularId <= 0 ||
-                entidad.Cantidad <= 0;
+            return entidad.Cantidad <= 0 ||
+                   entidad.Subtotal <= 0 ||
+                   entidad.Iva <= 0 ||
+                   entidad.Total <= 0;
         }
     }
 }

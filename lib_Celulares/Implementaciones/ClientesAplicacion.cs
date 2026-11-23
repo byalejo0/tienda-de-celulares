@@ -67,13 +67,9 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Clientes entidad)
         {
-            return entidad.PersonaId <= 0 ||
-                string.IsNullOrEmpty(entidad.TipoCliente) ||
-                entidad.TipoCliente.Length > 100 ||
-                string.IsNullOrEmpty(entidad.PaisResidencia) ||
-                entidad.PaisResidencia.Length > 50 ||
-                string.IsNullOrEmpty(entidad.Correo) ||
-                entidad.Correo.Length > 100;
+            return string.IsNullOrEmpty(entidad.TipoCliente) ||
+              string.IsNullOrEmpty(entidad.PaisResidencia) ||
+              string.IsNullOrEmpty(entidad.Correo);
         }
     }
 }

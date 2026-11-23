@@ -66,12 +66,9 @@ namespace lib_Celulares.Implementaciones
         private bool Validar(Personas entidad)
         {
             return string.IsNullOrEmpty(entidad.Cedula) ||
-                entidad.Cedula.Length > 20 ||
                 string.IsNullOrEmpty(entidad.Nombre) ||
-                entidad.Nombre.Length > 100 ||
-                entidad.Edad <= 0 ||
                 string.IsNullOrEmpty(entidad.Direccion) ||
-                entidad.Direccion.Length > 200;
+                entidad.Edad <= 0;
         }
     }
 }

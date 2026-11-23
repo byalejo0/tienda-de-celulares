@@ -67,7 +67,8 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Bonos entidad)
         {
-            return entidad.TecnicoId <= 0;
+            return entidad.CantidadReparaciones < 0 ||
+                   entidad.ValorBono < 0;
         }
     }
 }

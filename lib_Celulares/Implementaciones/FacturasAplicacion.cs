@@ -71,10 +71,12 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Facturas entidad)
         {
-            return entidad.ClienteId <= 0 ||
-                entidad.TrabajadorId <= 0 ||
-                entidad.Fecha == null ||
-                entidad.Fecha < new DateTime(1753, 1, 1);
+            return entidad.Iva < 0 ||
+                    entidad.Subtotal <= 0 ||
+                    entidad.Total <= 0 ||
+                    entidad.Fecha == null ||
+                    entidad.Fecha == DateTime.MinValue ||
+                    entidad.Fecha > DateTime.Now;
         }
     }
 }

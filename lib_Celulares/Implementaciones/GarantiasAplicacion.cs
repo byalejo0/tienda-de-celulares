@@ -71,17 +71,13 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Garantias entidad)
         {
-            return entidad.CelularId <= 0 ||
-                entidad.ClienteId <= 0 ||
-                entidad.FacturaId <= 0 ||
-                entidad.FechaInicio == null ||
-                entidad.FechaInicio < new DateTime(1753, 1, 1) ||
-                entidad.FechaVencimiento == null ||
-                entidad.FechaVencimiento < new DateTime(1753, 1, 1) ||
-                string.IsNullOrEmpty(entidad.TipoGarantia) ||
-                entidad.TipoGarantia.Length > 100 ||
-                string.IsNullOrEmpty(entidad.Estado) ||
-                entidad.Estado.Length > 50;
+            return string.IsNullOrEmpty(entidad.TipoGarantia) ||
+                   string.IsNullOrEmpty(entidad.Estado) ||
+                    entidad.FechaInicio == null ||
+                    entidad.FechaInicio == DateTime.MinValue ||
+
+                    entidad.FechaVencimiento == null ||
+                    entidad.FechaVencimiento == DateTime.MinValue;
         }
     }
 }

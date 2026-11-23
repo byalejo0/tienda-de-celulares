@@ -66,11 +66,8 @@ namespace lib_Celulares.Implementaciones
         private bool Validar(Transportadoras entidad)
         {
             return string.IsNullOrEmpty(entidad.Nombre) ||
-                entidad.Nombre.Length > 100 ||
                 string.IsNullOrEmpty(entidad.Correo) ||
-                entidad.Correo.Length > 100 ||
-                string.IsNullOrEmpty(entidad.Telefono) ||
-                entidad.Telefono.Length > 20;
+                string.IsNullOrEmpty(entidad.Telefono);
         }
     }
 }

@@ -66,17 +66,11 @@ namespace lib_Celulares.Implementaciones
         private bool Validar(Componentes entidad)
         {
             return string.IsNullOrEmpty(entidad.Procesador) ||
-                entidad.Procesador.Length > 100 ||
-                string.IsNullOrEmpty(entidad.MemoriaRam) ||
-                entidad.MemoriaRam.Length > 50 ||
-                string.IsNullOrEmpty(entidad.Pantalla) ||
-                entidad.Pantalla.Length > 100 ||
-                string.IsNullOrEmpty(entidad.Bateria) ||
-                entidad.Bateria.Length > 50 ||
-                string.IsNullOrEmpty(entidad.Camara) ||
-                entidad.Camara.Length > 100 ||
-                string.IsNullOrEmpty(entidad.SistemaOperativo) ||
-                entidad.SistemaOperativo.Length > 100;
+            string.IsNullOrEmpty(entidad.MemoriaRam) ||
+            string.IsNullOrEmpty(entidad.Pantalla) ||
+            string.IsNullOrEmpty(entidad.Bateria) ||
+            string.IsNullOrEmpty(entidad.Camara) ||
+            string.IsNullOrEmpty(entidad.SistemaOperativo);
         }
     }
 }

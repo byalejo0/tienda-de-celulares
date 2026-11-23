@@ -69,9 +69,8 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(DetallesCompras entidad)
         {
-            return entidad.CompraId <= 0 ||
-                entidad.CelularId <= 0 ||
-                entidad.Cantidad <= 0;
+            return entidad.Cantidad <= 0 ||
+                    entidad.PrecioCompra <= 0;
         }
     }
 }

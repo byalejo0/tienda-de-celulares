@@ -71,13 +71,11 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Envios entidad)
         {
-            return entidad.FacturaId <= 0 ||
-                entidad.TransportadoraId <= 0 ||
-                entidad.ClienteId <= 0 ||
-                entidad.FechaEnvio == null ||
-                entidad.FechaEnvio < new DateTime(1753, 1, 1) ||
-                entidad.FechaEntrega == null ||
-                entidad.FechaEntrega < new DateTime(1753, 1, 1);
+            return entidad.CostoEnvio <= 0 ||
+                   entidad.FechaEnvio == null ||
+                   entidad.FechaEnvio == DateTime.MinValue ||
+                   entidad.FechaEntrega == null ||
+                   entidad.FechaEntrega == DateTime.MinValue;
         }
     }
 }

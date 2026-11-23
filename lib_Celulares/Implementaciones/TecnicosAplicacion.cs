@@ -67,9 +67,8 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Tecnicos entidad)
         {
-            return entidad.TrabajadorId <= 0 ||
-                string.IsNullOrEmpty(entidad.Especializacion) ||
-                entidad.Especializacion.Length > 100;
+            return string.IsNullOrEmpty(entidad.Especializacion) ||
+                entidad.CelularesReparados < 0;
         }
     }
 }

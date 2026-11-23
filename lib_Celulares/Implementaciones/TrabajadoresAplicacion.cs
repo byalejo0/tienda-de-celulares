@@ -67,11 +67,9 @@ namespace lib_Celulares.Implementaciones
 
         private bool Validar(Trabajadores entidad)
         {
-            return entidad.PersonaId <= 0 ||
-                string.IsNullOrEmpty(entidad.Experiencia) ||
-                entidad.Experiencia.Length > 100 ||
+            return string.IsNullOrEmpty(entidad.Experiencia) ||
                 string.IsNullOrEmpty(entidad.Turno) ||
-                entidad.Turno.Length > 200;
+                entidad.Salario < 0;
         }
     }
 }
