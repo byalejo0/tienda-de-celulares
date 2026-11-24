@@ -3,9 +3,6 @@ using lib_Celulares.Nucleo;
 
 namespace Front_Celulares
 {
-    // Guarda y lee en la sesion quien inicio sesion, con que rol y a que ventanas
-    // puede entrar. Los datos vienen de Usuarios, Roles y Permisos (ver
-    // UsuariosAplicacion.Autenticar).
     public static class Seguridad
     {
         private const string LlaveUsuario = "Usuario";
@@ -33,7 +30,6 @@ namespace Front_Celulares
         public static int UsuarioId(ISession session)
             => session.GetInt32(LlaveUsuarioId) ?? 0;
 
-        // Rol principal: el que decide la interfaz de inicio.
         public static string? Rol(ISession session)
             => session.GetString(LlaveRol);
 
@@ -53,7 +49,6 @@ namespace Front_Celulares
         public static IEnumerable<GrupoVentanas> GruposVisibles(ISession session)
             => MenuVentanas.GruposVisibles(Ventanas(session));
 
-        // Texto corto para la barra superior: "Juan (Cliente)". Vacio si no hay sesion.
         public static string Chip(ISession session)
             => EstaLogueado(session) ? $"{Nombre(session)} ({Rol(session)})" : string.Empty;
     }

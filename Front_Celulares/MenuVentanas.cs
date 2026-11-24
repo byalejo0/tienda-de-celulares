@@ -4,27 +4,19 @@
 
     public record GrupoVentanas(string Titulo, Ventana[] Ventanas);
 
-    // Como se ve el inicio segun el rol: clase CSS, titulo y descripcion.
     public record PerfilRol(string Clase, string Titulo, string Descripcion);
 
-    // Catalogo de ventanas de la aplicacion, agrupadas para el menu.
-    //
-    // Quien puede entrar a cada ventana NO se define aqui: sale de la base de
-    // datos (Usuarios -> Roles -> Permisos). Permisos.Ventana debe ser igual a
-    // Ventana.Pagina. Para sumar una ventana nueva: crear la pagina, agregarla
-    // a este catalogo y crear el Permiso para el rol que deba verla.
+
     public static class MenuVentanas
     {
         public const string Cliente = "Cliente";
         public const string Trabajador = "Trabajador";
         public const string Administrador = "Administrador";
 
-        // Si un usuario tiene varios roles, manda el de mayor jerarquia.
         private static readonly string[] PrioridadRoles = [Administrador, Trabajador, Cliente];
 
         public static readonly GrupoVentanas[] Grupos =
         [
-            // Lo que gira alrededor del cliente: catálogo y sus trámites
             new("Tienda",
             [
                 new("Celulares", "Celulares"),
@@ -39,7 +31,6 @@
                 new("DetallesReparaciones", "Detalles de reparaciones")
             ]),
 
-            // El día a día del local: clientes, inventario y abastecimiento
             new("Operación",
             [
                 new("Clientes", "Clientes"),
@@ -50,7 +41,6 @@
                 new("Transportadoras", "Transportadoras")
             ]),
 
-            // Datos personales, salarios, bonos y cuentas
             new("Administración",
             [
                 new("Personas", "Personas"),
@@ -65,7 +55,6 @@
             ])
         ];
 
-        // Los grupos con solo las ventanas permitidas; los grupos vacios no se muestran.
         public static IEnumerable<GrupoVentanas> GruposVisibles(IEnumerable<string> ventanasPermitidas)
         {
             var permitidas = new HashSet<string>(ventanasPermitidas, StringComparer.OrdinalIgnoreCase);
@@ -77,7 +66,6 @@
                 .Where(g => g.Ventanas.Length > 0);
         }
 
-        // El rol "principal" decide que interfaz de inicio se muestra.
         public static string RolPrincipal(IEnumerable<string> roles)
         {
             var lista = roles.ToList();

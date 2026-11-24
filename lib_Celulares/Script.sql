@@ -459,4 +459,5 @@ FROM [Auditorias] a JOIN [Usuarios] u ON u.[Id] = a.[UsuarioId]
 ORDER BY a.[Fecha];
 GO
 
+
 */

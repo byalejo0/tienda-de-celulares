@@ -53,9 +53,6 @@ app.UseRouting();
 app.UseSession();
 app.UseAuthorization();
 
-// Cada ventana (/Ventanas/...) exige sesion iniciada y que alguno de los roles
-// del usuario tenga el Permiso (Permisos.Ventana) para esa ventana. Esto evita
-// que se entre escribiendo la direccion a mano, aunque el menu no la muestre.
 app.Use(async (context, next) =>
 {
     const string prefijo = "/Ventanas/";
@@ -80,8 +77,6 @@ app.Use(async (context, next) =>
     await next(context);
 });
 
-// Auditoria: cada Guardar / Borrar / Comprar hecho en una ventana queda en la
-// tabla Auditorias con el usuario, la ventana y la fecha.
 app.Use(async (context, next) =>
 {
     await next(context);

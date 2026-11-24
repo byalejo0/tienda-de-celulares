@@ -3,8 +3,6 @@ using Pre_Celulares.Interfaces;
 
 namespace Front_Celulares
 {
-    // Escribe una fila en la tabla Auditorias: quien (UsuarioId), que hizo y cuando.
-    // Nunca lanza error: si la auditoria falla, la aplicacion sigue funcionando.
     public static class RegistroAuditoria
     {
         public static void Registrar(IAuditoriasPresentacion auditorias, int usuarioId, string descripcion)
@@ -26,7 +24,6 @@ namespace Front_Celulares
             }
             catch
             {
-                // la auditoria no debe tumbar la operacion principal
             }
         }
     }
